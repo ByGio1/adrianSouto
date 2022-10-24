@@ -1,32 +1,9 @@
 module.exports = {
-  purge: {
-    content: ["./public/**/*.html"],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './public/**/*.html',
+  ],
   theme: {
-    colors: {
-      secondary: "#F4F2ED",
-      black: "black",
-      white: "white",
-    },
-    fontFamily: {
-      "pt-serif": ["PT Serif", "serif"],
-      montserrat: ["Montserrat", "sans-serif"],
-    },
-    backgroundSize: {
-      auto: "auto",
-      cover: "cover",
-      contain: "contain",
-      "100%": "100%",
-    },
     extend: {
-      backgroundImage: {
-        underline1: "url('./assets/Underline1.svg')",
-        underline2: "url('./assets/Underline2.svg')",
-        underline3: "url('./assets/Underline3.svg')",
-        underline4: "url('./assets/Underline4.svg')",
-        highlight3: "url('./assets/Highlight3.svg')",
-      },
       keyframes: {
         "fade-in-down": {
           "0%": {
