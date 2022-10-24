@@ -12,8 +12,8 @@
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/dist/assets/favicon.svg" sizes="32x32">
+  <link rel="icon" type="image/png" href="/dist/assets/favicon.svg" sizes="16x16">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
@@ -31,8 +31,6 @@
   <meta name="twitter:url" content="https://www.adriansouto.com" />
   <meta name="twitter:image"
     content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg" />
-
-  <link rel="stylesheet" href="dist/styles.css" />
   <script src="dist/script.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,22 +43,73 @@
     gtag('config', 'G-NVJWL0F5PL');
   </script>
 
-<body class="bg-secondary">
+<body class="bg-[#F4F2ED]">
 
   <!-- Navigation -->
-  <nav></nav>
-  <!-- Main feed -->
-  <main>
-    <!-- Collection name LEFT-->
-    <div></div>
-    <!-- Feed Image CENTER-->
-    <div></div>
-    <!-- Thumbnail images RIGHT-->
-    <div></div>
-  </main>
-  <!-- Footer -->
-  <footer></footer>
+  <header>
+    <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center z-10">
+      <div class="flex items-center">
+        <img src='dist/assets/Logo_black.svg' alt="Logo" class="h-4" />
+      </div>
+      <ul class="text-xs uppercase font-bold tracking-tighter items-center space-x-4 hidden md:flex">
+        <li class="">
+          <a class="" href="/photography">Photography</a>
+        </li>
+        <li class="">
+          <a class="" href="/about">About</a>
+        </li>
+        <li class="">
+          <a class="" href="/contact">Contact</a>
+        </li>
+      </ul>
+      <div class="space-x-4 hidden md:block">
+        <button class="text-xs uppercase font-bold tracking-tighter">Search</button>
+        <button class="py-2 px-4 text-white text-xs uppercase font-bold tracking-tighter bg-black rounded-3xl">
+          Help
+        </button>
+      </div>
+      <div id="showMenu" class="md:hidden">
+        <a class="text-xs uppercase font-bold" href="/photography">Menu</a>
+      </div>
+    </nav>
+  </header>
 
+
+  <div class="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2">
+    <img src="/public/dist/assets/images/01_web.jpg" />
+    <img src="/public/dist/assets/images/02_web.jpg" />
+    <img src="/public/dist/assets/images/03_web.jpg" />
+    <img src="/public/dist/assets/images/04_web.jpg" />
+    <img src="/public/dist/assets/images/05_web.jpg" />
+    <img src="/public/dist/assets/images/06_web.jpg" />
+    <img src="/public/dist/assets/images/07_web.jpg" />
+    <img src="/public/dist/assets/images/08_web.jpg" />
+    <img src="/public/dist/assets/images/09_web.jpg" />
+    <img src="/public/dist/assets/images/10_web.jpg" />
+    <img src="/public/dist/assets/images/11_web.jpg" />
+    <img src="/public/dist/assets/images/12_web.jpg" />
+    <img src="/public/dist/assets/images/13_web.jpg" />
+    <img src="/public/dist/assets/images/14_web.jpg" />
+    <img src="/public/dist/assets/images/15_web.jpg" />
+    <img src="/public/dist/assets/images/16_web.jpg" />
+    <img src="/public/dist/assets/images/17_web.jpg" />
+    <img src="/public/dist/assets/images/18_web.jpg" />
+    <img src="/public/dist/assets/images/19_web.jpg" />
+    <img src="/public/dist/assets/images/20_web.jpg" />
+    <img src="/public/dist/assets/images/21_web.jpg" />
+    <img src="/public/dist/assets/images/22_web.jpg" />
+    <img src="/public/dist/assets/images/23_web.jpg" />
+    <img src="/public/dist/assets/images/24_web.jpg" />
+    <img src="/public/dist/assets/images/25_web.jpg" />
+    <img src="/public/dist/assets/images/26_web.jpg" />
+    <img src="/public/dist/assets/images/27_web.jpg" />
+    <img src="/public/dist/assets/images/28_web.jpg" />
+    <img src="/public/dist/assets/images/29_web.jpg" />
+  </div>
+
+
+  <!-- Footer -->
+  <footer class=""></footer>
 
 </body>
 
