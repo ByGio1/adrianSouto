@@ -1,116 +1,171 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es-ES" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+<html
+  class="no-js"
+  lang="es-ES"
+  prefix="og: http://ogp.me/ns#"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <title>Home - Adrian Souto - Photography</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Photography" />
+    <link
+      rel="stylesheet"
+      href="dist/styles.css"
+      type="text/css"
+      media="screen"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="author"
+      href="https://www.julienderreveaux.co/wp-content/themes/jdtheme/humans.txt"
+    />
 
-<head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/dist/assets/favicon.svg"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/dist/assets/favicon.svg"
+      sizes="16x16"
+    />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <title>Home - Adrian Souto - Photography</title>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Photography">
-  <link rel="stylesheet" href="dist/styles.css" type="text/css" media="screen" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="author" href="https://www.julienderreveaux.co/wp-content/themes/jdtheme/humans.txt" />
+    <!-- Facebook  -->
+    <meta property="og:title" content="Adrian Souto - Photography" />
+    <meta property="og:site_name" content="Adrian Souto" />
+    <meta property="og:description" content="Adrian Souto - Photography" />
+    <meta property="og:url" content="https://www.adriansouto.com" />
+    <meta
+      property="og:image"
+      content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <!-- Twitter  -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Adrian Souto - SiteDescription" />
+    <meta name="twitter:description" content="Adrian Souto - SiteDescription" />
+    <meta name="twitter:url" content="https://www.adriansouto.com" />
+    <meta
+      name="twitter:image"
+      content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg"
+    />
+    <script src="dist/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/dist/assets/favicon.svg" sizes="32x32">
-  <link rel="icon" type="image/png" href="/dist/assets/favicon.svg" sizes="16x16">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
-  <meta name="theme-color" content="#ffffff">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NVJWL0F5PL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- Facebook  -->
-  <meta property="og:title" content="Adrian Souto - Photography" />
-  <meta property="og:site_name" content="Adrian Souto" />
-  <meta property="og:description" content="Adrian Souto - Photography" />
-  <meta property="og:url" content="https://www.adriansouto.com" />
-  <meta property="og:image" content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg" />
-  <meta property="og:type" content="website" />
-  <!-- Twitter  -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Adrian Souto - SiteDescription" />
-  <meta name="twitter:description" content="Adrian Souto - SiteDescription" />
-  <meta name="twitter:url" content="https://www.adriansouto.com" />
-  <meta name="twitter:image"
-    content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg" />
-  <script src="dist/script.js"></script>
+      gtag("config", "G-NVJWL0F5PL");
+    </script>
+  </head>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVJWL0F5PL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  <body id="app">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 h-auto w-full">
+      <nav class="z-10 flex w-full content-center justify-between p-4">
+        <div class="basis-2/4">
+          <a href="/" class="text-10xl text-black">A</a>
+        </div>
+        <div class="hidden lg:flex lg:basis-1/4">
+          <p class="text-xs font-bold uppercase">
+            Adrian Souto<br />Photography
+          </p>
+        </div>
+        <div class="basis-1/4">
+          <a href="/" class="text-10xl text-black">S</a>
+        </div>
+        <div id="showMenu" class="">
+          <a class="text-xs font-bold uppercase" href="/photography">Menu</a>
+        </div>
+      </nav>
+    </header>
 
-    gtag('config', 'G-NVJWL0F5PL');
-  </script>
+    <main class="bg-white">
+      <!-- Masonry Showcase Section -->
+      <section class="mt-16 columns-2 gap-2 space-y-2 lg:mt-20 lg:columns-4">
+        <img src="/public/dist/assets/images/01_web.jpg" />
+        <img src="/public/dist/assets/images/02_web.jpg" />
+        <img src="/public/dist/assets/images/03_web.jpg" />
+        <img src="/public/dist/assets/images/04_web.jpg" />
+        <img src="/public/dist/assets/images/05_web.jpg" />
+        <img src="/public/dist/assets/images/06_web.jpg" />
+        <img src="/public/dist/assets/images/07_web.jpg" />
+        <img src="/public/dist/assets/images/08_web.jpg" />
+        <img src="/public/dist/assets/images/09_web.jpg" />
+        <img src="/public/dist/assets/images/10_web.jpg" />
+        <img src="/public/dist/assets/images/11_web.jpg" />
+        <img src="/public/dist/assets/images/12_web.jpg" />
+        <img src="/public/dist/assets/images/13_web.jpg" />
+        <img src="/public/dist/assets/images/14_web.jpg" />
+        <img src="/public/dist/assets/images/15_web.jpg" />
+        <img src="/public/dist/assets/images/16_web.jpg" />
+        <img src="/public/dist/assets/images/17_web.jpg" />
+        <img src="/public/dist/assets/images/18_web.jpg" />
+        <img src="/public/dist/assets/images/19_web.jpg" />
+        <img src="/public/dist/assets/images/20_web.jpg" />
+        <img src="/public/dist/assets/images/21_web.jpg" />
+        <img src="/public/dist/assets/images/22_web.jpg" />
+        <img src="/public/dist/assets/images/24_web.jpg" />
+        <img src="/public/dist/assets/images/25_web.jpg" />
+        <img src="/public/dist/assets/images/26_web.jpg" />
+        <img src="/public/dist/assets/images/27_web.jpg" />
+        <img src="/public/dist/assets/images/28_web.jpg" />
+        <img src="/public/dist/assets/images/29_web.jpg" />
+      </section>
+    </main>
 
-<body class="bg-[#F4F2ED]">
-
-  <!-- Navigation -->
-  <header>
-    <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center z-10">
-      <div class="flex items-center">
-        <img src='dist/assets/Logo_black.svg' alt="Logo" class="h-4" />
+    <!-- Footer -->
+    <footer id="footer" class="flex flex-initial flex-row flex-wrap p-4">
+      <div class="max-w-full basis-full">
+        <ul class="inline-block basis-auto">
+          <li>
+            <p class="text-10xl--footer uppercase">Editorial</p>
+          </li>
+          <li>
+            <p class="text-10xl--footer uppercase">Artwork</p>
+          </li>
+          <li>
+            <p class="text-10xl--footer uppercase">Commercial</p>
+          </li>
+        </ul>
       </div>
-      <ul class="text-xs uppercase font-bold tracking-tighter items-center space-x-4 hidden md:flex">
-        <li class="">
-          <a class="" href="/photography">Photography</a>
-        </li>
-        <li class="">
-          <a class="" href="/about">About</a>
-        </li>
-        <li class="">
-          <a class="" href="/contact">Contact</a>
-        </li>
-      </ul>
-      <div class="space-x-4 hidden md:block">
-        <button class="text-xs uppercase font-bold tracking-tighter">Search</button>
-        <button class="py-2 px-4 text-white text-xs uppercase font-bold tracking-tighter bg-black rounded-3xl">
-          Help
-        </button>
+      <div class="hidden max-w-full basis-full lg:flex lg:basis-1/2">
+        <p class="text-xs font-bold uppercase">
+          ©2022, <a href="/legal">Legal</a>
+        </p>
       </div>
-      <div id="showMenu" class="md:hidden">
-        <a class="text-xs uppercase font-bold" href="/photography">Menu</a>
+      <div class="flex max-w-full basis-full lg:basis-1/4">
+        <p class="text-xs font-bold uppercase">
+          <a href="mailto:hello@adriansouto.com">E-Mail</a>,
+          <a href="https://www.instagram.com/rubenwyttenbach" target="_blank"
+            >Instagram</a
+          >
+        </p>
       </div>
-    </nav>
-  </header>
-
-
-  <div class="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2">
-    <img src="/public/dist/assets/images/01_web.jpg" />
-    <img src="/public/dist/assets/images/02_web.jpg" />
-    <img src="/public/dist/assets/images/03_web.jpg" />
-    <img src="/public/dist/assets/images/04_web.jpg" />
-    <img src="/public/dist/assets/images/05_web.jpg" />
-    <img src="/public/dist/assets/images/06_web.jpg" />
-    <img src="/public/dist/assets/images/07_web.jpg" />
-    <img src="/public/dist/assets/images/08_web.jpg" />
-    <img src="/public/dist/assets/images/09_web.jpg" />
-    <img src="/public/dist/assets/images/10_web.jpg" />
-    <img src="/public/dist/assets/images/11_web.jpg" />
-    <img src="/public/dist/assets/images/12_web.jpg" />
-    <img src="/public/dist/assets/images/13_web.jpg" />
-    <img src="/public/dist/assets/images/14_web.jpg" />
-    <img src="/public/dist/assets/images/15_web.jpg" />
-    <img src="/public/dist/assets/images/16_web.jpg" />
-    <img src="/public/dist/assets/images/17_web.jpg" />
-    <img src="/public/dist/assets/images/18_web.jpg" />
-    <img src="/public/dist/assets/images/19_web.jpg" />
-    <img src="/public/dist/assets/images/20_web.jpg" />
-    <img src="/public/dist/assets/images/21_web.jpg" />
-    <img src="/public/dist/assets/images/22_web.jpg" />
-    <img src="/public/dist/assets/images/23_web.jpg" />
-    <img src="/public/dist/assets/images/24_web.jpg" />
-    <img src="/public/dist/assets/images/25_web.jpg" />
-    <img src="/public/dist/assets/images/26_web.jpg" />
-    <img src="/public/dist/assets/images/27_web.jpg" />
-    <img src="/public/dist/assets/images/28_web.jpg" />
-    <img src="/public/dist/assets/images/29_web.jpg" />
-  </div>
-
-
-  <!-- Footer -->
-  <footer class=""></footer>
-
-</body>
-
+      <div class="flex max-w-full basis-full lg:basis-1/4">
+        <p class="text-xs font-bold uppercase">
+          <a href="https://close-knit.ch" target="_blank">Credits</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

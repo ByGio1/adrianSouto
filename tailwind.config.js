@@ -1,23 +1,24 @@
 module.exports = {
-  content: [
-    './public/**/*.html',
-  ],
+  content: ["./public/**/*.html", "./public/dist/**/*.js"],
   theme: {
     extend: {
-      keyframes: {
-        "fade-in-down": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(-10px)",
+      fontSize: {
+        "10xl--footer": [
+          "calc(5em + (48 - 24) * ((100vw - 300px) / (1800 - 300)))",
+          {
+            lineHeight: ".8em",
+            letterSpacing: "-0.04em",
+            fontWeight: "400",
           },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
+        ],
+        "10xl": [
+          "12vw",
+          {
+            lineHeight: "0.6em",
+            letterSpacing: "-0.05em",
+            fontWeight: "400",
           },
-        },
-      },
-      animation: {
-        "fade-in-down": "fade-in-down 0.5s ease-out",
+        ],
       },
     },
   },
