@@ -2,6 +2,9 @@ module.exports = {
   content: ["./public/**/*.html", "./public/dist/**/*.js"],
   theme: {
     extend: {
+      flexBasis: {
+        "1/7": "14.25%",
+      },
       fontSize: {
         "10xl--footer": [
           "calc(5em + (48 - 24) * ((100vw - 300px) / (1800 - 300)))",

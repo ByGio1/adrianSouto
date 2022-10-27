@@ -466,6 +466,39 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .fixed {
   position: fixed;
 }
@@ -478,8 +511,15 @@ video {
 .z-10 {
   z-index: 10;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mt-16 {
   margin-top: 4rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .inline-block {
   display: inline-block;
@@ -499,6 +539,9 @@ video {
 .max-w-full {
   max-width: 100%;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .flex-initial {
   flex: 0 1 auto;
 }
@@ -514,10 +557,6 @@ video {
 .basis-auto {
   flex-basis: auto;
 }
-.columns-2 {
-  -moz-columns: 2;
-       columns: 2;
-}
 .flex-row {
   flex-direction: row;
 }
@@ -530,13 +569,8 @@ video {
 .justify-between {
   justify-content: space-between;
 }
-.gap-2 {
-  gap: 0.5rem;
-}
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+.gap-4 {
+  gap: 1rem;
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -544,6 +578,10 @@ video {
 }
 .p-4 {
   padding: 1rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .text-10xl {
   font-size: 12vw;
@@ -571,10 +609,23 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+@media (min-width: 768px) {
+
+  .md\:basis-1\/5 {
+    flex-basis: 20%;
+  }
+}
 @media (min-width: 1024px) {
 
   .lg\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .lg\:mt-12 {
+    margin-top: 3rem;
   }
 
   .lg\:flex {
@@ -585,13 +636,12 @@ video {
     flex-basis: 25%;
   }
 
-  .lg\:basis-1\/2 {
-    flex-basis: 50%;
+  .lg\:basis-1\/7 {
+    flex-basis: 14.25%;
   }
 
-  .lg\:columns-4 {
-    -moz-columns: 4;
-         columns: 4;
+  .lg\:basis-1\/2 {
+    flex-basis: 50%;
   }
 }
 
