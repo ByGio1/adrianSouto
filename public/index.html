@@ -58,7 +58,8 @@
       name="twitter:image"
       content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg"
     />
-    <script src="dist/script.js"></script>
+    <script src="./dist/script.js"></script>
+    <script src="./dist/lazysizes.min.js" async=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
@@ -102,732 +103,256 @@
     <main class="bg-white">
       <!-- Masonry Showcase Section -->
       <section
-        class="mx-auto mt-16 flex w-full flex-row flex-wrap gap-4 px-4 lg:mt-20"
+        class="mx-auto mt-20 flex w-full flex-row flex-wrap gap-4 overflow-y-scroll px-4 scrollbar-hide lg:mt-40"
       >
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#1">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/01_web.webp 256w,
-                ./dist/assets/images/01_web.webp 320w,
-                ./dist/assets/images/01_web.webp 512w,
-                ./dist/assets/images/01_web.webp 640w,
-                ./dist/assets/images/01_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/1"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #f73d02; color: #f73d02"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/01_web.jpg"
-                data-srcset="./dist/assets/images/01_web.jpg 256w,
-                ./dist/assets/images/01_web.jpg 320w,
-                ./dist/assets/images/01_web.jpg 512w,
-                ./dist/assets/images/01_web.jpg 640w,
-                ./dist/assets/images/01_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#2">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/02_web.webp 256w,
-                ./dist/assets/images/02_web.webp 320w,
-                ./dist/assets/images/02_web.webp 512w,
-                ./dist/assets/images/02_web.webp 640w,
-                ./dist/assets/images/02_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/2"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #dddddd; color: #dddddd"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/02_web.jpg"
-                data-srcset="./dist/assets/images/02_web.jpg 256w,
-                ./dist/assets/images/02_web.jpg 320w,
-                ./dist/assets/images/02_web.jpg 512w,
-                ./dist/assets/images/02_web.jpg 640w,
-                ./dist/assets/images/02_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#3">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/03_web.webp 256w,
-                ./dist/assets/images/03_web.webp 320w,
-                ./dist/assets/images/03_web.webp 512w,
-                ./dist/assets/images/03_web.webp 640w,
-                ./dist/assets/images/03_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/3"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #11b5e0; color: #11b5e0"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/03_web.jpg"
-                data-srcset="./dist/assets/images/03_web.jpg 256w,
-                ./dist/assets/images/03_web.jpg 320w,
-                ./dist/assets/images/03_web.jpg 512w,
-                ./dist/assets/images/03_web.jpg 640w,
-                ./dist/assets/images/03_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#4">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/04_web.webp 256w,
-                  ./dist/assets/images/04_web.webp 320w,
-                  ./dist/assets/images/04_web.webp 512w,
-                  ./dist/assets/images/04_web.webp 640w,
-                  ./dist/assets/images/04_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/4"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #5a9215; color: #5a9215"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/04_web.jpg"
-                data-srcset="./dist/assets/images/04_web.jpg 256w,
-                  ./dist/assets/images/04_web.jpg 320w,
-                  ./dist/assets/images/04_web.jpg 512w,
-                  ./dist/assets/images/04_web.jpg 640w,
-                  ./dist/assets/images/04_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#5">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/05_web.webp 256w,
-                ./dist/assets/images/05_web.webp 320w,
-                ./dist/assets/images/05_web.webp 512w,
-                ./dist/assets/images/05_web.webp 640w,
-                ./dist/assets/images/05_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/heads"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #df4018; color: #df4018"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/05_web.jpg"
-                data-srcset="./dist/assets/images/05_web.jpg 256w,
-                ./dist/assets/images/05_web.jpg 320w,
-                ./dist/assets/images/05_web.jpg 512w,
-                ./dist/assets/images/05_web.jpg 640w,
-                ./dist/assets/images/05_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#6">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/06_web.webp 256w,
-                  ./dist/assets/images/06_web.webp 320w,
-                  ./dist/assets/images/06_web.webp 512w,
-                  ./dist/assets/images/06_web.webp 640w,
-                  ./dist/assets/images/06_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/brain-freeze"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #f8a4e7; color: #f8a4e7"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/06_web.jpg"
-                data-srcset="./dist/assets/images/06_web.jpg 256w,
-                  ./dist/assets/images/06_web.jpg 320w,
-                  ./dist/assets/images/06_web.jpg 512w,
-                  ./dist/assets/images/06_web.jpg 640w,
-                  ./dist/assets/images/06_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#7">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/07_web.webp 256w,
-                  ./dist/assets/images/07_web.webp 320w,
-                  ./dist/assets/images/07_web.webp 512w,
-                  ./dist/assets/images/07_web.webp 640w,
-                  ./dist/assets/images/07_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/5"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #f73d02; color: #f73d02"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/07_web.jpg"
-                data-srcset="./dist/assets/images/07_web.jpg 256w,
-                  ./dist/assets/images/07_web.jpg 320w,
-                  ./dist/assets/images/07_web.jpg 512w,
-                  ./dist/assets/images/07_web.jpg 640w,
-                  ./dist/assets/images/07_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#8">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/08_web.webp 256w,
-                  ./dist/assets/images/08_web.webp 320w,
-                  ./dist/assets/images/08_web.webp 512w,
-                  ./dist/assets/images/08_web.webp 640w,
-                  ./dist/assets/images/08_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/braids_2"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #678d36; color: #678d36"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/08_web.jpg"
-                data-srcset="./dist/assets/images/08_web.jpg 256w,
-                  ./dist/assets/images/08_web.jpg 320w,
-                  ./dist/assets/images/08_web.jpg 512w,
-                  ./dist/assets/images/08_web.jpg 640w,
-                  ./dist/assets/images/08_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#9">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/09_web.webp 256w,
-                  ./dist/assets/images/09_web.webp 320w,
-                  ./dist/assets/images/09_web.webp 512w,
-                  ./dist/assets/images/09_web.webp 640w,
-                  ./dist/assets/images/09_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/8"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #e4c51c; color: #e4c51c"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/09_web.jpg"
-                data-srcset="./dist/assets/images/09_web.jpg 256w,
-                  ./dist/assets/images/09_web.jpg 320w,
-                  ./dist/assets/images/09_web.jpg 512w,
-                  ./dist/assets/images/09_web.jpg 640w,
-                  ./dist/assets/images/09_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#10">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/10_web.webp 256w,
-                  ./dist/assets/images/10_web.webp 320w,
-                  ./dist/assets/images/10_web.webp 512w,
-                  ./dist/assets/images/10_web.webp 640w,
-                  ./dist/assets/images/10_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/10"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #f34841; color: #f34841"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/10_web.jpg"
-                data-srcset="./dist/assets/images/10_web.jpg 256w,
-                  ./dist/assets/images/10_web.jpg 320w,
-                  ./dist/assets/images/10_web.jpg 512w,
-                  ./dist/assets/images/10_web.jpg 640w,
-                  ./dist/assets/images/10_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#11">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/11_web.webp 256w,
-                  ./dist/assets/images/11_web.webp 320w,
-                  ./dist/assets/images/11_web.webp 512w,
-                  ./dist/assets/images/11_web.webp 640w,
-                  ./dist/assets/images/11_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/9"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #dfba61; color: #dfba61"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/11_web.jpg"
-                data-srcset="./dist/assets/images/11_web.jpg 256w,
-                  ./dist/assets/images/11_web.jpg 320w,
-                  ./dist/assets/images/11_web.jpg 512w,
-                  ./dist/assets/images/11_web.jpg 640w,
-                  ./dist/assets/images/11_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
         </div>
         <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#12">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/12_web.webp 256w,
-                  ./dist/assets/images/12_web.webp 320w,
-                  ./dist/assets/images/12_web.webp 512w,
-                  ./dist/assets/images/12_web.webp 640w,
-                  ./dist/assets/images/12_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
+          <a
+            href="/personal/6"
+            class="js-media-visibility relative inline-block w-full overflow-hidden"
+            style="background-color: #ff84b2; color: #ff84b2"
+          >
+            <picture
+              ><source
+                srcset="
+                  https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=400
+                "
+                data-srcset="https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=400"
+                media="(min-width: 300px)"
               />
               <img
-                data-src="./dist/assets/images/12_web.jpg"
-                data-srcset="./dist/assets/images/12_web.jpg 256w,
-                  ./dist/assets/images/12_web.jpg 320w,
-                  ./dist/assets/images/12_web.jpg 512w,
-                  ./dist/assets/images/12_web.jpg 640w,
-                  ./dist/assets/images/12_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#13">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/13_web.webp 256w,
-                  ./dist/assets/images/13_web.webp 320w,
-                  ./dist/assets/images/13_web.webp 512w,
-                  ./dist/assets/images/13_web.webp 640w,
-                  ./dist/assets/images/13_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/13_web.jpg"
-                data-srcset="./dist/assets/images/13_web.jpg 256w,
-                  ./dist/assets/images/13_web.jpg 320w,
-                  ./dist/assets/images/13_web.jpg 512w,
-                  ./dist/assets/images/13_web.jpg 640w,
-                  ./dist/assets/images/13_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#14">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/14_web.webp 256w,
-                  ./dist/assets/images/14_web.webp 320w,
-                  ./dist/assets/images/14_web.webp 512w,
-                  ./dist/assets/images/14_web.webp 640w,
-                  ./dist/assets/images/14_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/14_web.jpg"
-                data-srcset="./dist/assets/images/14_web.jpg 256w,
-                  ./dist/assets/images/14_web.jpg 320w,
-                  ./dist/assets/images/14_web.jpg 512w,
-                  ./dist/assets/images/14_web.jpg 640w,
-                  ./dist/assets/images/14_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#15">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/15_web.webp 256w,
-                  ./dist/assets/images/15_web.webp 320w,
-                  ./dist/assets/images/15_web.webp 512w,
-                  ./dist/assets/images/15_web.webp 640w,
-                  ./dist/assets/images/15_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/15_web.jpg"
-                data-srcset="./dist/assets/images/15_web.jpg 256w,
-                  ./dist/assets/images/15_web.jpg 320w,
-                  ./dist/assets/images/15_web.jpg 512w,
-                  ./dist/assets/images/15_web.jpg 640w,
-                  ./dist/assets/images/15_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#16">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/16_web.webp 256w,
-                  ./dist/assets/images/16_web.webp 320w,
-                  ./dist/assets/images/16_web.webp 512w,
-                  ./dist/assets/images/16_web.webp 640w,
-                  ./dist/assets/images/16_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/16_web.jpg"
-                data-srcset="./dist/assets/images/16_web.jpg 256w,
-                  ./dist/assets/images/16_web.jpg 320w,
-                  ./dist/assets/images/16_web.jpg 512w,
-                  ./dist/assets/images/16_web.jpg 640w,
-                  ./dist/assets/images/16_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#17">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/17_web.webp 256w,
-                  ./dist/assets/images/17_web.webp 320w,
-                  ./dist/assets/images/17_web.webp 512w,
-                  ./dist/assets/images/17_web.webp 640w,
-                  ./dist/assets/images/17_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/17_web.jpg"
-                data-srcset="./dist/assets/images/17_web.jpg 256w,
-                  ./dist/assets/images/17_web.jpg 320w,
-                  ./dist/assets/images/17_web.jpg 512w,
-                  ./dist/assets/images/17_web.jpg 640w,
-                  ./dist/assets/images/17_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#18">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/18_web.webp 256w,
-                  ./dist/assets/images/18_web.webp 320w,
-                  ./dist/assets/images/18_web.webp 512w,
-                  ./dist/assets/images/18_web.webp 640w,
-                  ./dist/assets/images/18_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/18_web.jpg"
-                data-srcset="./dist/assets/images/18_web.jpg 256w,
-                  ./dist/assets/images/18_web.jpg 320w,
-                  ./dist/assets/images/18_web.jpg 512w,
-                  ./dist/assets/images/18_web.jpg 640w,
-                  ./dist/assets/images/18_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#19">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/19_web.webp 256w,
-                  ./dist/assets/images/19_web.webp 320w,
-                  ./dist/assets/images/19_web.webp 512w,
-                  ./dist/assets/images/19_web.webp 640w,
-                  ./dist/assets/images/19_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/19_web.jpg"
-                data-srcset="./dist/assets/images/19_web.jpg 256w,
-                  ./dist/assets/images/19_web.jpg 320w,
-                  ./dist/assets/images/19_web.jpg 512w,
-                  ./dist/assets/images/19_web.jpg 640w,
-                  ./dist/assets/images/19_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#20">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/20_web.webp 256w,
-                  ./dist/assets/images/20_web.webp 320w,
-                  ./dist/assets/images/20_web.webp 512w,
-                  ./dist/assets/images/20_web.webp 640w,
-                  ./dist/assets/images/20_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/20_web.jpg"
-                data-srcset="./dist/assets/images/20_web.jpg 256w,
-                  ./dist/assets/images/20_web.jpg 320w,
-                  ./dist/assets/images/20_web.jpg 512w,
-                  ./dist/assets/images/20_web.jpg 640w,
-                  ./dist/assets/images/20_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#22">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/22_web.webp 256w,
-                  ./dist/assets/images/22_web.webp 320w,
-                  ./dist/assets/images/22_web.webp 512w,
-                  ./dist/assets/images/22_web.webp 640w,
-                  ./dist/assets/images/22_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/22_web.jpg"
-                data-srcset="./dist/assets/images/22_web.jpg 256w,
-                  ./dist/assets/images/22_web.jpg 320w,
-                  ./dist/assets/images/22_web.jpg 512w,
-                  ./dist/assets/images/22_web.jpg 640w,
-                  ./dist/assets/images/22_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#23">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/23_web.webp 256w,
-                  ./dist/assets/images/23_web.webp 320w,
-                  ./dist/assets/images/23_web.webp 512w,
-                  ./dist/assets/images/23_web.webp 640w,
-                  ./dist/assets/images/23_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/23_web.jpg"
-                data-srcset="./dist/assets/images/23_web.jpg 256w,
-                  ./dist/assets/images/23_web.jpg 320w,
-                  ./dist/assets/images/23_web.jpg 512w,
-                  ./dist/assets/images/23_web.jpg 640w,
-                  ./dist/assets/images/23_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#24">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/24_web.webp 256w,
-                  ./dist/assets/images/24_web.webp 320w,
-                  ./dist/assets/images/24_web.webp 512w,
-                  ./dist/assets/images/24_web.webp 640w,
-                  ./dist/assets/images/24_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/24_web.jpg"
-                data-srcset="./dist/assets/images/24_web.jpg 256w,
-                  ./dist/assets/images/24_web.jpg 320w,
-                  ./dist/assets/images/24_web.jpg 512w,
-                  ./dist/assets/images/24_web.jpg 640w,
-                  ./dist/assets/images/24_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#25">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/25_web.webp 256w,
-                  ./dist/assets/images/25_web.webp 320w,
-                  ./dist/assets/images/25_web.webp 512w,
-                  ./dist/assets/images/25_web.webp 640w,
-                  ./dist/assets/images/25_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/25_web.jpg"
-                data-srcset="./dist/assets/images/25_web.jpg 256w,
-                  ./dist/assets/images/25_web.jpg 320w,
-                  ./dist/assets/images/25_web.jpg 512w,
-                  ./dist/assets/images/25_web.jpg 640w,
-                  ./dist/assets/images/25_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#26">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/26_web.webp 256w,
-                  ./dist/assets/images/26_web.webp 320w,
-                  ./dist/assets/images/26_web.webp 512w,
-                  ./dist/assets/images/26_web.webp 640w,
-                  ./dist/assets/images/26_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/26_web.jpg"
-                data-srcset="./dist/assets/images/26_web.jpg 256w,
-                  ./dist/assets/images/26_web.jpg 320w,
-                  ./dist/assets/images/26_web.jpg 512w,
-                  ./dist/assets/images/26_web.jpg 640w,
-                  ./dist/assets/images/26_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#27">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/27_web.webp 256w,
-                  ./dist/assets/images/27_web.webp 320w,
-                  ./dist/assets/images/27_web.webp 512w,
-                  ./dist/assets/images/27_web.webp 640w,
-                  ./dist/assets/images/27_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/27_web.jpg"
-                data-srcset="./dist/assets/images/27_web.jpg 256w,
-                  ./dist/assets/images/27_web.jpg 320w,
-                  ./dist/assets/images/27_web.jpg 512w,
-                  ./dist/assets/images/27_web.jpg 640w,
-                  ./dist/assets/images/27_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#28">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/28_web.webp 256w,
-                  ./dist/assets/images/28_web.webp 320w,
-                  ./dist/assets/images/28_web.webp 512w,
-                  ./dist/assets/images/28_web.webp 640w,
-                  ./dist/assets/images/28_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/28_web.jpg"
-                data-srcset="./dist/assets/images/28_web.jpg 256w,
-                  ./dist/assets/images/28_web.jpg 320w,
-                  ./dist/assets/images/28_web.jpg 512w,
-                  ./dist/assets/images/28_web.jpg 640w,
-                  ./dist/assets/images/28_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a href="#29">
-            <picture>
-              <source
-                type="image/webp"
-                data-srcset="./dist/assets/images/29_web.webp 256w,
-                  ./dist/assets/images/29_web.webp 320w,
-                  ./dist/assets/images/29_web.webp 512w,
-                  ./dist/assets/images/29_web.webp 640w,
-                  ./dist/assets/images/29_web.webp 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-              />
-              <img
-                data-src="./dist/assets/images/29_web.jpg"
-                data-srcset="./dist/assets/images/29_web.jpg 256w,
-                  ./dist/assets/images/29_web.jpg 320w,
-                  ./dist/assets/images/29_web.jpg 512w,
-                  ./dist/assets/images/29_web.jpg 640w,
-                  ./dist/assets/images/29_web.jpg 960w"
-                data-sizes="(min-width: 1024px) 14.25vw, (min-width: 768px) 20vw, 25vw"
-                alt="Open Toe"
-                class="lazy"
+                src="https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=50"
+                class="lazyload w-full scale-105"
               />
             </picture>
           </a>
@@ -850,7 +375,7 @@
           </li>
         </ul>
       </div>
-      <div class="hidden max-w-full basis-full lg:flex lg:basis-1/2">
+      <div class="flex max-w-full basis-full lg:basis-1/2">
         <p class="text-xs font-bold uppercase">
           ©2022, <a href="/legal">Legal</a>
         </p>
@@ -869,49 +394,5 @@
         </p>
       </div>
     </footer>
-
-    <script src="./dist/lazyload.min.js"></script>
-    <script>
-      (function () {
-        function logElementEvent(eventName, element) {
-          console.log(Date.now(), eventName, element.getAttribute("data-src"));
-        }
-
-        var callback_enter = function (element) {
-          logElementEvent("🔑 ENTERED", element);
-        };
-        var callback_exit = function (element) {
-          logElementEvent("🚪 EXITED", element);
-        };
-        var callback_loading = function (element) {
-          logElementEvent("⌚ LOADING", element);
-        };
-        var callback_loaded = function (element) {
-          logElementEvent("👍 LOADED", element);
-        };
-        var callback_error = function (element) {
-          logElementEvent("💀 ERROR", element);
-          element.src =
-            "https://via.placeholder.com/440x560/?text=Error+Placeholder";
-        };
-        var callback_finish = function () {
-          logElementEvent("✔️ FINISHED", document.documentElement);
-        };
-        var callback_cancel = function (element) {
-          logElementEvent("🔥 CANCEL", element);
-        };
-
-        ll = new LazyLoad({
-          // Assign the callbacks defined above
-          callback_enter: callback_enter,
-          callback_exit: callback_exit,
-          callback_cancel: callback_cancel,
-          callback_loading: callback_loading,
-          callback_loaded: callback_loaded,
-          callback_error: callback_error,
-          callback_finish: callback_finish,
-        });
-      })();
-    </script>
   </body>
 </html>
