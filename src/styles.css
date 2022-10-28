@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.js-media-visibility > * {
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    -webkit-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    transition-delay: .2s
+}
+
+.js-media-visibility.is-visible > * {
+    opacity: 1
+}
