@@ -1,8 +1,8 @@
-//Fade In - HomePage GSAP animation
-
+//ItemTransition - HomePage GSAP animation
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  //ItemTransition editorial page (Color background)
   const imagesBackground = gsap.utils.toArray(".js-media-visibility");
   imagesBackground.forEach((image) => {
     gsap.to(image, {
@@ -14,6 +14,7 @@ window.addEventListener("load", () => {
     });
   });
 
+  //HomePage GSAP Animations (Global Function)
   GlobalPage = {
     Init: function () {
       this.Clone(), this.ItemTransition(), this.LoadMore();
@@ -45,7 +46,6 @@ window.addEventListener("load", () => {
 });
 
 //Progress Bar
-
 function progressBarScroll() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
     height =
@@ -59,8 +59,7 @@ window.onscroll = function () {
   progressBarScroll();
 };
 
-// Splash screen
-
+// Splash screen (Intro Animation)
 document.addEventListener("DOMContentLoaded", function () {
   const intro = document.getElementById("intro");
   const letter = document.querySelector(".welcome-header");

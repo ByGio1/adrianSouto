@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./public/**/*.html", "./public/dist/**/*.js"],
+  content: [
+    "./public/index.html",
+    "./public/**/*.{html,js}",
+    "./src/**/*.{html,js}",
+  ],
   theme: {
     extend: {
       flexBasis: {
@@ -28,7 +32,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
