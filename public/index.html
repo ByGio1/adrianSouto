@@ -9,6 +9,8 @@
   <head>
     <title>Home - Adrian Souto - Photography</title>
     <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="canonical" href="https://www.adriansouto.com" />
     <meta name="description" content="Photography" />
     <link
       rel="stylesheet"
@@ -17,10 +19,7 @@
       media="screen"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="author"
-      href="https://www.julienderreveaux.co/wp-content/themes/jdtheme/humans.txt"
-    />
+    <link rel="author" href="https://www.adriansouto.com/humans.txt" />
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -79,10 +78,36 @@
     </script>
   </head>
 
-  <body id="app">
-    <!-- Navigation -->
-    <header class="fixed top-0 left-0 h-auto w-full">
-      <nav class="z-10 flex w-full content-center justify-between p-4">
+  <body id="app" class="scrollbar-hide">
+    <!-- Intro Screen -->
+    <div id="intro">
+      <nav
+        class="welcome-header flex w-full content-center justify-between p-4"
+      >
+        <div class="basis-2/4">
+          <a href="/" class="text-10xl text-white">ADRIAN</a>
+        </div>
+        <div class="hidden lg:flex lg:basis-1/4">
+          <p class="text-xs font-bold uppercase">
+            Adrian Souto<br />Photography
+          </p>
+        </div>
+        <div class="basis-1/4">
+          <a href="/" class="text-10xl text-white">SOUTO</a>
+        </div>
+        <div id="showMenu" class="">
+          <a class="text-xs font-bold uppercase" href="/photography">Menu</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 z-50 h-auto w-full">
+      <!-- Progress Bar -->
+      <div class="progress-container h-2 w-full bg-transparent">
+        <div class="progress-bar h-2 w-0 bg-black" id="progressBar"></div>
+      </div>
+      <!-- Navigation -->
+      <nav class="flex w-full content-center justify-between p-4">
         <div class="basis-2/4">
           <a href="/" class="text-10xl text-black">A</a>
         </div>
@@ -102,266 +127,268 @@
 
     <main class="bg-white">
       <!-- Masonry Showcase Section -->
-      <section
-        class="mx-auto mt-20 flex w-full flex-row flex-wrap gap-4 overflow-y-scroll px-4 scrollbar-hide lg:mt-40"
-      >
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/1"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #f73d02; color: #f73d02"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/1df48d0a-bbda-41f2-a22c-fc36336b4840_personal-01.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/2"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #dddddd; color: #dddddd"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/1bb9ffcf-5095-455f-bb26-11cd43e09daa_personal-02.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/3"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #11b5e0; color: #11b5e0"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/aa15c28e-7dcc-44d9-a134-418996adff71_personal-03.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/4"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #5a9215; color: #5a9215"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/7b5907bd-a2a8-46cf-8279-9e855a91fabe_personal-04.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/heads"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #df4018; color: #df4018"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/f71f905b-277e-4475-870f-b2dca4884edd_HeadPieces0175_3484JJ_B_ADOBERGB.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/brain-freeze"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #f8a4e7; color: #f8a4e7"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/382f5d3f-c848-473a-a7a3-8d05a50a13e4_11456-6-053.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/5"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #f73d02; color: #f73d02"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/a7c39fde-05e2-4265-8f92-34bf0ea1437b_personal-05.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/braids_2"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #678d36; color: #678d36"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/64175c06-e374-4fde-9f13-55246084c126_323845-2D-A-004-005.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/8"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #e4c51c; color: #e4c51c"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/47952eb6-5c33-490a-87a9-0cb3f4652d97_personal-08.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/10"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #f34841; color: #f34841"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/70f81a45-bb50-4f34-9a70-941d8ff8616b_personal-10.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/9"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #dfba61; color: #dfba61"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/f8e300d0-2538-46dc-97d7-e008714f7a7c_personal-09.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
-        </div>
-        <div class="mt-10 flex-1 basis-1/4 md:basis-1/5 lg:mt-12 lg:basis-1/7">
-          <a
-            href="/personal/6"
-            class="js-media-visibility relative inline-block w-full overflow-hidden"
-            style="background-color: #ff84b2; color: #ff84b2"
-          >
-            <picture
-              ><source
-                srcset="
-                  https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=400
-                "
-                data-srcset="https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=400"
-                media="(min-width: 300px)"
-              />
-              <img
-                src="https://images.prismic.io/juliajohnson/b7d5f189-697e-4da8-af60-03f5e59113de_personal-06.jpg?auto=compress,format&amp;width=50"
-                class="lazyload w-full scale-105"
-              />
-            </picture>
-          </a>
+      <section class="c-home">
+        <div id="js-home-items">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/professional"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="
+                    background-color: rgb(255, 82, 0);
+                    color: rgb(255, 82, 0);
+                  "
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/26d94267-bf3b-49c1-bc5c-24db7a653cc5_327251-2-004.jpg?auto=compress,format&amp;width=1000
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/26d94267-bf3b-49c1-bc5c-24db7a653cc5_327251-2-004.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/26d94267-bf3b-49c1-bc5c-24db7a653cc5_327251-2-004.jpg?auto=compress,format&amp;width=600
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/26d94267-bf3b-49c1-bc5c-24db7a653cc5_327251-2-004.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/26d94267-bf3b-49c1-bc5c-24db7a653cc5_327251-2-004.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/personal"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="
+                    background-color: rgb(243, 80, 17);
+                    color: rgb(243, 80, 17);
+                  "
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/0b00a0b4-a85b-4c9c-ba08-14158e070505_11456-10-047.jpg?auto=compress,format&amp;width=1000
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/0b00a0b4-a85b-4c9c-ba08-14158e070505_11456-10-047.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/0b00a0b4-a85b-4c9c-ba08-14158e070505_11456-10-047.jpg?auto=compress,format&amp;width=600
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/0b00a0b4-a85b-4c9c-ba08-14158e070505_11456-10-047.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/0b00a0b4-a85b-4c9c-ba08-14158e070505_11456-10-047.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyloaded"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/personal"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="
+                    background-color: rgb(37, 173, 142);
+                    color: rgb(37, 173, 142);
+                  "
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/bc91e79c-b669-42e3-8a5f-1b6c75eab75b_MANCY_FACES1416.jpg?auto=compress,format&amp;width=1000
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/bc91e79c-b669-42e3-8a5f-1b6c75eab75b_MANCY_FACES1416.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/bc91e79c-b669-42e3-8a5f-1b6c75eab75b_MANCY_FACES1416.jpg?auto=compress,format&amp;width=600
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/bc91e79c-b669-42e3-8a5f-1b6c75eab75b_MANCY_FACES1416.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/bc91e79c-b669-42e3-8a5f-1b6c75eab75b_MANCY_FACES1416.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyloaded"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/personal"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="background-color: #eeca6f; color: #eeca6f"
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/1a828ae7-e3e7-4194-8a4b-d8a5d60e9b63_16614-SHOT4-2-041.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/1a828ae7-e3e7-4194-8a4b-d8a5d60e9b63_16614-SHOT4-2-041.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/1a828ae7-e3e7-4194-8a4b-d8a5d60e9b63_16614-SHOT4-2-041.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/1a828ae7-e3e7-4194-8a4b-d8a5d60e9b63_16614-SHOT4-2-041.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/1a828ae7-e3e7-4194-8a4b-d8a5d60e9b63_16614-SHOT4-2-041.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/professional"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="background-color: #d719df; color: #d719df"
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/a5c6e89e-a2e2-4f0b-a7d1-d8b7ca595aab_210317_JUCO_Audi_11-1940_2968JC_B_ADOBERGB.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/a5c6e89e-a2e2-4f0b-a7d1-d8b7ca595aab_210317_JUCO_Audi_11-1940_2968JC_B_ADOBERGB.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/a5c6e89e-a2e2-4f0b-a7d1-d8b7ca595aab_210317_JUCO_Audi_11-1940_2968JC_B_ADOBERGB.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/a5c6e89e-a2e2-4f0b-a7d1-d8b7ca595aab_210317_JUCO_Audi_11-1940_2968JC_B_ADOBERGB.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/a5c6e89e-a2e2-4f0b-a7d1-d8b7ca595aab_210317_JUCO_Audi_11-1940_2968JC_B_ADOBERGB.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/personal"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="background-color: #ff377f; color: #ff377f"
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/c5ac218c-6078-472b-b0f2-89e32f1d0e23_HeadPieces0369_3484JJ_A_ADOBERGB.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/c5ac218c-6078-472b-b0f2-89e32f1d0e23_HeadPieces0369_3484JJ_A_ADOBERGB.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/c5ac218c-6078-472b-b0f2-89e32f1d0e23_HeadPieces0369_3484JJ_A_ADOBERGB.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/c5ac218c-6078-472b-b0f2-89e32f1d0e23_HeadPieces0369_3484JJ_A_ADOBERGB.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/c5ac218c-6078-472b-b0f2-89e32f1d0e23_HeadPieces0369_3484JJ_A_ADOBERGB.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/personal"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="background-color: #107541; color: #107541"
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/e85bad32-429c-4f20-8466-7599ed1e910e_323845-1F-A-002.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/e85bad32-429c-4f20-8466-7599ed1e910e_323845-1F-A-002.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/e85bad32-429c-4f20-8466-7599ed1e910e_323845-1F-A-002.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/e85bad32-429c-4f20-8466-7599ed1e910e_323845-1F-A-002.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/e85bad32-429c-4f20-8466-7599ed1e910e_323845-1F-A-002.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="c-home__item js-home-item">
+                <a
+                  href="/professional"
+                  class="c-home__media-container js-home-item-media-container"
+                  style="background-color: #078a26; color: #078a26"
+                >
+                  <picture
+                    ><source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/937ea114-f550-49d9-b5e8-fcbee5f27220_REDO_11456-24-051.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/937ea114-f550-49d9-b5e8-fcbee5f27220_REDO_11456-24-051.jpg?auto=compress,format&amp;width=1000"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        https://images.prismic.io/juliajohnson/937ea114-f550-49d9-b5e8-fcbee5f27220_REDO_11456-24-051.jpg?auto=compress,format&amp;width=50
+                      "
+                      data-srcset="https://images.prismic.io/juliajohnson/937ea114-f550-49d9-b5e8-fcbee5f27220_REDO_11456-24-051.jpg?auto=compress,format&amp;width=600"
+                      media="(min-width: 300px)"
+                    />
+                    <img
+                      src="https://images.prismic.io/juliajohnson/937ea114-f550-49d9-b5e8-fcbee5f27220_REDO_11456-24-051.jpg?auto=compress,format&amp;width=50"
+                      class="c-home__media js-home-item-media lazyload"
+                    />
+                  </picture>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-
+    
     <!-- Footer -->
-    <footer id="footer" class="flex flex-initial flex-row flex-wrap p-4">
+    <footer
+      id="footer"
+      class="flex flex-initial flex-row flex-wrap p-4 lg:mt-20"
+    >
       <div class="max-w-full basis-full">
         <ul class="inline-block basis-auto">
           <li>
