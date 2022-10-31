@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
   //HomePage GSAP Animations (Global Function)
   GlobalPage = {
     Init: function () {
-      this.Clone(), this.ItemTransition(), this.LoadMore();
+      this.Clone(), this.ItemTransition(), this.BurgerNav(), this.LoadMore();
     },
     Clone: function () {},
     ItemTransition: function () {
@@ -40,6 +40,17 @@ window.addEventListener("load", () => {
             n.to(item, { duration: 1, opacity: 0 }, "+=1");
         });
     },
+    BurgerNav: function () {
+      const buttonToggle = document.getElementById("js-navbar-menu-toggle");
+      const navContainer = document.getElementById("js-navbar");
+      buttonToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        e = navContainer;
+        e.classList.contains("is-active")
+          ? e.classList.remove("is-active")
+          : e.classList.add("is-active");
+      });
+    },
     LoadMore: function () {},
   };
   GlobalPage.Init();
@@ -61,28 +72,12 @@ window.onscroll = function () {
 
 // Splash screen (Intro Animation)
 document.addEventListener("DOMContentLoaded", function () {
+  
   const intro = document.getElementById("intro");
-  const letter = document.querySelector(".welcome-header");
-  const letterSpan = document.querySelectorAll(".letter");
 
   setTimeout(() => {
-    letterSpan.forEach((span, idx) => {
-      setTimeout(() => {
-        span.classList.add("active");
-      }, (idx + 1) * 200);
-    });
-
-    setTimeout(() => {
-      letterSpan.forEach((span, idx) => {
-        setTimeout(() => {
-          span.classList.remove("active");
-          span.classList.add("fade");
-        }, (idx + 1) * 50);
-      });
-    }, 2000);
-
-    setTimeout(() => {
-      intro.style.top = "-100vh";
-    }, 2000);
-  });
+    intro.style.top = "-100vh";
+  }, 2000);
 });
+
+//Custom Cursor

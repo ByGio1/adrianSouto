@@ -2,6 +2,9 @@ module.exports = {
   content: [
     "./public/index.html",
     "./public/**/*.{html,js}",
+    "./personal/**/*.{html,js}",
+    "./professional/**/*.{html,js}",
+    "./about/**/*.{html,js}",
     "./src/**/*.{html,js}",
   ],
   theme: {
@@ -11,7 +14,7 @@ module.exports = {
       },
       fontSize: {
         "10xl--footer": [
-          "calc(5em + (48 - 24) * ((100vw - 300px) / (1800 - 300)))",
+          "clamp(3rem, 1.236rem + 9.076vw, 5rem)",
           {
             lineHeight: ".8em",
             letterSpacing: "-0.04em",
@@ -28,6 +31,9 @@ module.exports = {
         ],
       },
     },
+    fontFamily: {
+      sans: ['"Helvetica Neue"', 'sans-serif']
+    }
   },
   variants: {
     extend: {},
