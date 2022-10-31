@@ -1,5 +1,5 @@
 //ItemTransition - HomePage GSAP animation
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
   //ItemTransition editorial page (Color background)
@@ -17,7 +17,11 @@ window.addEventListener("load", () => {
   //HomePage GSAP Animations (Global Function)
   GlobalPage = {
     Init: function () {
-      this.Clone(), this.ItemTransition(), this.BurgerNav(), this.LoadMore();
+      this.Clone(), 
+      this.ItemTransition(), 
+      this.BurgerNav(),
+      this.NavLinks(), 
+      this.LoadMore();
     },
     Clone: function () {},
     ItemTransition: function () {
@@ -51,6 +55,20 @@ window.addEventListener("load", () => {
           : e.classList.add("is-active");
       });
     },
+    NavLinks: function () {
+      const navBar = document.getElementById("#js-navbar");
+      const imageToggle = document.querySelectorAll("html.no-touchevents, a.js-navbar-image-toggle");
+      console.log(imageToggle);
+
+      imageToggle.addEventListener("mouseenter", function () {  
+        const image = imageToggle.getAttribute('data-link');
+        navBar.classList.add("c-navbar--" + image);
+      });
+      imageToggle.addEventListener("mouseleave", function () {  
+        const image = imageToggle.getAttribute('data-link');
+        navBar.classList.remove("c-navbar--" + image);
+      }); 
+    },
     LoadMore: function () {},
   };
   GlobalPage.Init();
@@ -72,7 +90,7 @@ window.onscroll = function () {
 
 // Splash screen (Intro Animation)
 document.addEventListener("DOMContentLoaded", function () {
-  
+
   const intro = document.getElementById("intro");
 
   setTimeout(() => {
