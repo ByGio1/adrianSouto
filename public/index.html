@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  class="no-js"
+  class="js no-touchevents"
   lang="es-ES"
   prefix="og: http://ogp.me/ns#"
   itemscope
@@ -57,7 +57,7 @@
       name="twitter:image"
       content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg"
     />
-    <script src="./dist/lazysizes.min.js" async=""></script>
+    <script src="./dist/lazysizes.min.js" async="async"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="./dist/script.js"></script>
@@ -82,20 +82,16 @@
     <div class="inner-cursor"></div>
     <!-- Intro Screen -->
     <div id="intro">
-      <nav
-        class="welcome-header flex w-full content-center justify-between p-4"
-      >
-        <div class="basis-2/4">
-          <p class="text-10xl text-white">ADRIAN</p>
+      <nav class="flex items-center h-screen justify-between p-4 text-white uppercase">
+        <div class="flex basis-2/4">
+          <p class="text-10xl">Adrian</p>
         </div>
-        <div class="hidden lg:flex lg:basis-1/4">
-          <p class="text-xs uppercase">Adrian Souto<br />Photography</p>
+        <div class="flex basis-2/4">
+          <p class="text-10xl">Souto</p>
         </div>
-        <div class="basis-1/4">
-          <p class="text-10xl text-white">SOUTO</p>
-        </div>
-        <div id="showMenu" class="">
-          <a class="text-xs uppercase" href="/photography">Menu</a>
+        <!-- Menu Toggle -->
+        <div class="flex flex-initial">
+          <span class="text-xs">A.S</span>
         </div>
       </nav>
     </div>
@@ -111,17 +107,10 @@
       id="js-navbar"
     >
       <div class="z-[300] flex basis-2/4">
-        <a href="index.html" class="text-10xl text-black"
-          >A<span class="text-white">DRIAN</span></a
-        >
+        <a href="index.html" class="text-10xl text-black">A</a>
       </div>
-      <div class="z-[300] hidden lg:flex lg:basis-1/4">
-        <p class="text-xs uppercase">Adrian Souto<br />Photography</p>
-      </div>
-      <div class="z-[300] flex basis-1/4">
-        <a href="index.html" class="text-10xl text-black"
-          >S<span class="text-white">OUTO</span></a
-        >
+      <div class="z-[300] flex basis-2/4">
+        <a href="index.html" class="text-10xl text-black">S</a>
       </div>
       <!-- Menu Toggle -->
       <button
@@ -141,32 +130,36 @@
                   href="/personal"
                   class="c-navbar__list-link js-navbar-image-toggle"
                   data-link="personal"
-                  >Personal</a
                 >
+                  Personal
+                </a>
               </li>
               <li class="c-navbar__list-item">
                 <a
                   href="/professional"
                   class="c-navbar__list-link js-navbar-image-toggle"
                   data-link="professional"
-                  >Professional</a
                 >
+                  Professional
+                </a>
               </li>
               <li class="c-navbar__list-item">
                 <a
                   href="/video"
                   class="c-navbar__list-link js-navbar-image-toggle"
                   data-link="video"
-                  >Video</a
                 >
+                  Video
+                </a>
               </li>
               <li class="c-navbar__list-item">
                 <a
                   href="/about-me"
                   class="c-navbar__list-link js-navbar-image-toggle"
                   data-link="about"
-                  >About me</a
                 >
+                  About me
+                </a>
               </li>
             </ul>
           </div>
@@ -224,9 +217,9 @@
       </div>
     </nav>
 
-    <main>
+    <main id="wrapper">
       <!-- Masonry Showcase Section -->
-      <section class="c-home">
+      <section id="content" class="c-home">
         <div id="js-home-items">
           <div class="container-fluid">
             <div class="row">
@@ -484,10 +477,7 @@
     </main>
 
     <!-- Footer -->
-    <footer
-      id="footer"
-      class="flex flex-initial flex-row flex-wrap p-4 lg:mt-20"
-    >
+    <footer id="footer" class="flex flex-initial flex-row flex-wrap p-4 lg:mt-20">
       <div class="max-w-full basis-full">
         <ul class="inline-block basis-auto">
           <li>
@@ -507,9 +497,7 @@
       <div class="flex max-w-full basis-full lg:basis-1/4">
         <p class="text-xs uppercase">
           <a href="mailto:hello@adriansouto.com">E-Mail</a>,
-          <a href="https://www.instagram.com/rubenwyttenbach" target="_blank"
-            >Instagram</a
-          >
+          <a href="https://www.instagram.com/adriansouto" target="_blank">Instagram</a>
         </p>
       </div>
       <div class="flex max-w-full basis-full lg:basis-1/4">
