@@ -58,20 +58,20 @@ document.addEventListener("DOMContentLoaded", function () {
     NavLinks: function () {
       const navBar = document.getElementById("js-navbar");
       var imageToggle = document.querySelectorAll(".js-navbar-image-toggle");
-      console.log(imageToggle.length);
+      // console.log(imageToggle.length);
 
       for (let i = 0; i < imageToggle.length; i++) {
         const element = imageToggle[i];
-        
-        element.addEventListener("mouseenter", function() {
+
+        element.addEventListener("mouseenter", function () {
           var x = element.getAttribute("data-link");
           navBar.classList.add("c-navbar--" + x);
         });
-        element.addEventListener("mouseleave", function() {
+        element.addEventListener("mouseleave", function () {
           var x = element.getAttribute("data-link");
           navBar.classList.remove("c-navbar--" + x);
         });
-      };
+      }
     },
     LoadMore: function () {},
   };
@@ -101,4 +101,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 2000);
 });
 
-//Custom Cursor
+//Change text onclick button Menu / Close
+document.addEventListener("DOMContentLoaded", function () {
+  const linkToggle = document.querySelector("#js-navbar-menu-toggle");
+  const main = document.getElementById("app");
+  linkToggle.addEventListener("click", function () {
+    main.classList.add("onMenu");
+    clearTimeout();
+    setTimeout(function () {
+      main.classList.remove("onMenu");
+    }, 1000);
+    main.classList.toggle("open-menu");
+  });
+});

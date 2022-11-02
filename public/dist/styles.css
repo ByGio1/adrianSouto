@@ -1366,6 +1366,8 @@ html.no-touchevents .c-home__media-container:hover::before {
     transition-delay: .3s
 }
 
+/* Menu Css custom */
+
 @media (min-width: 768px) {
 
   .md\:basis-1\/5 {
