@@ -57,18 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     NavLinks: function () {
       const navBar = document.getElementById("js-navbar");
-      var imageToggle = document.querySelector("a.js-navbar-image-toggle");
-      console.log(imageToggle);
+      var imageToggle = document.querySelectorAll(".js-navbar-image-toggle");
+      console.log(imageToggle.length);
 
-      imageToggle.addEventListener("mouseenter", function (i) {
-        var i = imageToggle.getAttribute("data-link");
-        navBar.classList.add("c-navbar--" + i);
-      });
-
-      imageToggle.addEventListener("mouseleave", function (i) {
-        var i = imageToggle.getAttribute("data-link");
-        navBar.classList.remove("c-navbar--" + i);
-      });
+      for (let i = 0; i < imageToggle.length; i++) {
+        const element = imageToggle[i];
+        
+        element.addEventListener("mouseenter", function() {
+          var x = element.getAttribute("data-link");
+          navBar.classList.add("c-navbar--" + x);
+        });
+        element.addEventListener("mouseleave", function() {
+          var x = element.getAttribute("data-link");
+          navBar.classList.remove("c-navbar--" + x);
+        });
+      };
     },
     LoadMore: function () {},
   };
