@@ -1258,7 +1258,65 @@ html.no-touchevents .c-home__media-container:hover::before {
     background-color: #ffc3d5 !important;
 }
 
+.c-navbar--personal .c-navbar__links {
+    transition-delay: 0s
+}
+
 .c-navbar--personal .c-navbar__images--personal .c-navbar-image__media-container {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.c-navbar--professional .c-navbar__links {
+    background-color: #c0ebfd
+}
+
+.c-navbar--professional .c-navbar__menu::before,
+.c-navbar--professional .c-navbar__menu::after {
+    background-color: #c0ebfd !important
+}
+
+.c-navbar--professional .c-navbar__links {
+    transition-delay: 0s
+}
+
+.c-navbar--professional .c-navbar__images--professional .c-navbar-image__media-container {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.c-navbar--video .c-navbar__links {
+    background-color: #dcf482
+}
+
+.c-navbar--video .c-navbar__menu::before,
+.c-navbar--video .c-navbar__menu::after {
+    background-color: #dcf482 !important
+}
+
+.c-navbar--video .c-navbar__links {
+    transition-delay: 0s
+}
+
+.c-navbar--video .c-navbar__images--video .c-navbar-image__media-container {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.c-navbar--about .c-navbar__links {
+    background-color: #e3e2e2
+}
+
+.c-navbar--about .c-navbar__menu::before,
+.c-navbar--about .c-navbar__menu::after {
+    background-color: #e3e2e2 !important
+}
+
+.c-navbar--about .c-navbar__links {
+    transition-delay: 0s
+}
+
+.c-navbar--about .c-navbar__images--about .c-navbar-image__media-container {
     opacity: 1;
     transform: translateY(0)
 }
