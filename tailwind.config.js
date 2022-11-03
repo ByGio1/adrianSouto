@@ -12,6 +12,9 @@ module.exports = {
       flexBasis: {
         "1/7": "14.25%",
       },
+      translate: {
+        "screen": "100vh",
+      },
       fontSize: {
         "10xl--footer": [
           "clamp(3rem, 1.236rem + 9.076vw, 5rem)",
@@ -32,8 +35,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['"Helvetica Neue"', 'sans-serif']
-    }
+      sans: ['"Helvetica Neue"', "sans-serif"],
+    },
   },
   variants: {
     extend: {},

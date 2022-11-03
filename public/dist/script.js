@@ -92,15 +92,6 @@ window.onscroll = function () {
   progressBarScroll();
 };
 
-// Splash screen (Intro Animation)
-document.addEventListener("DOMContentLoaded", function () {
-  const intro = document.getElementById("intro");
-
-  setTimeout(() => {
-    intro.style.top = "-100vh";
-  }, 2000);
-});
-
 //Change text onclick button Menu / Close
 document.addEventListener("DOMContentLoaded", function () {
   const linkToggle = document.querySelector("#js-navbar-menu-toggle");
