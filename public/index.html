@@ -43,10 +43,7 @@
     <meta property="og:site_name" content="Adrian Souto" />
     <meta property="og:description" content="Adrian Souto - Photography" />
     <meta property="og:url" content="https://www.adriansouto.com" />
-    <meta
-      property="og:image"
-      content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg"
-    />
+    <meta property="og:image" content="https://www.julienderreveaux.co/wp-content/uploads/2021/11/L1001780-661x999.jpg" />
     <meta property="og:type" content="website" />
 
     <script src="./dist/lazysizes.min.js" async="async"></script>
@@ -55,10 +52,7 @@
     <script src="./dist/script.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-NVJWL0F5PL"
-    ></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-NVJWL0F5PL" async="async"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -71,6 +65,12 @@
   </head>
 
   <body id="app" onload="loading()" class="bg-white scrollbar-hide">
+    <!-- Enable JS -->
+    <noscript>
+      <div class="no-js">
+        <span class="sr-only">Please enable JavaScript to view this website.</span>
+      </div>
+    </noscript>
     <div class="inner-cursor"></div>
     <!-- Intro Screen -->
     <div
@@ -353,7 +353,7 @@
     </nav>
 
     <main>
-      <!-- Masonry Showcase Section -->
+      <!-- Showcase Section -->
       <section class="c-home">
         <div id="js-home-items">
           <div class="container-fluid">
@@ -387,6 +387,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
+                  <div id="project__caption" class="relative hidden -z-10">As the Crow Flies</div>
                 </a>
               </div>
             </div>
@@ -680,32 +681,6 @@
       setTimeout(function () {
         document.body.setAttribute("style", "overflow:visible;");
       }, 2500);
-    </script>
-
-    <script>
-      const innerCursor = document.querySelector(".inner-cursor");
-      document.addEventListener("mousemove", moveCursor);
-
-      function moveCursor(e) {
-        let x = e.clientX;
-        let y = e.clientY;
-        // console.log(x,y);
-
-        innerCursor.style.left = `${x}px`;
-        innerCursor.style.top = `${y}px`;
-      }
-
-      const links = Array.from(document.querySelectorAll("a, button"));
-      // console.log(links);
-
-      links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-          innerCursor.classList.add("grow");
-        });
-        link.addEventListener("mouseleave", () => {
-          innerCursor.classList.remove("grow");
-        });
-      });
     </script>
   </body>
 </html>
