@@ -37,14 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
   //HomePage GSAP Animations (Global Function)
   GlobalPage = {
     Init: function () {
-        this.CursorAnimation(),
+      this.CursorAnimation(),
+        this.cursorText(),
+        this.mouseOver(),
         this.ItemTransition(),
         this.BurgerNav(),
         this.NavLinks();
     },
     CursorAnimation: function () {
       if (!isMobile() || !isTouchDevice()) {
-        const innerCursor = document.querySelector(".inner-cursor");
+        const innerCursor = document.getElementById("innerCursor");
         document.addEventListener("mousemove", moveCursor);
 
         function moveCursor(e) {
@@ -68,6 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
       }
+    },
+    cursorText: function () {
+      if (!isMobile() || !isTouchDevice()) {
+        const projectCap = document.querySelectorAll("#project__caption");
+        const cursorText = document.getElementById("cursor-outer");
+
+        for (let i = 0; i < projectCap.length; i++) {
+          const element = projectCap[i];
+          const clonned = cursorText.appendChild(element.cloneNode(true));
+          clonned.classList.add("is-inactive");
+        }    
+      }
+    },
+    mouseOver: function () {
+      const projectInit = document.querySelectorAll("#caption__init");
+        for (let i = 0; i < projectInit.length; i++) {
+          const element = projectInit[i];
+          const hoveredProject = (element.textContent);
+          console.log(hoveredProject);
+        }
     },
     ItemTransition: function () {
       gsap.utils
@@ -103,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     NavLinks: function () {
       const navBar = document.getElementById("js-navbar");
       var imageToggle = document.querySelectorAll(".js-navbar-image-toggle");
-      // console.log(imageToggle.length);
+      // console.log(typeof imageToggle);
 
       for (let i = 0; i < imageToggle.length; i++) {
         const element = imageToggle[i];
