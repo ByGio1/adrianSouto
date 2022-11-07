@@ -76,13 +76,22 @@ document.addEventListener("DOMContentLoaded", function () {
   //HomePage GSAP Animations (Global Function)
   GlobalPage = {
     Init: function () {
-      this.CursorAnimation(),
+      this.onLoaded(),
+        this.CursorAnimation(),
         this.cursorText(),
         this.mouseOver(),
         this.setBack(),
         this.ItemTransition(),
         this.BurgerNav(),
         this.NavLinks();
+    },
+    onLoaded: function () {
+      var cursorLoaded = document.getElementById("cursor-outer");
+      gsap.to(cursorLoaded, 0.5, {
+        delay: 0.5,
+        left: 20,
+        ease: Expo.easeOut,
+      });
     },
     CursorAnimation: function () {
       if (!isMobile() || !isTouchDevice()) {
@@ -157,13 +166,15 @@ document.addEventListener("DOMContentLoaded", function () {
           clonned.classList.add("is-inactive");
         }
 
-        var zoom = document.querySelectorAll("#caption__init");
-        console.log(zoom);
-
-        for (let i = 0; i < zoom.length; i++) {
-          const element = zoom[i];
-          element.addEventListener("mouseover", function mouseOver() {});
-          element.addEventListener("mouseout", function mouseOut() {});
+        var hasOriginalCaption = document.querySelectorAll("#caption__init");
+        for (let i = 0; i < hasOriginalCaption.length; i++) {
+          const element = hasOriginalCaption[i];
+          element.addEventListener("mouseover", function mouseOver() {
+            console.log("Hey, you hover me!");
+          });
+          element.addEventListener("mouseout", function mouseOut() {
+            console.log("Hey, you hover out of me!");
+          });
         }
       }
     },
@@ -174,25 +185,40 @@ document.addEventListener("DOMContentLoaded", function () {
           return i.textContent;
         }
       );
+      const string = JSON.stringify(hoveredProject);
+      console.log(string);
+      console.log(typeof string);
+
       console.log(hoveredProject);
-      // console.log(typeof hoveredProject);
+      console.log(typeof hoveredProject);
+
       var hoveredProjectActive = [].slice
         .call(document.querySelectorAll("#cursor-outer .project__caption"))
         .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
+
       console.log(hoveredProjectActive.length);
+      console.log(hoveredProjectActive);
+      console.log(typeof hoveredProjectActive);
+
       var hoveredProjectThis = [].map.call(
-        document.querySelectorAll("#caption__init .project__caption"),
+        document.querySelectorAll("#cursor-outer .project__caption"),
         function (i) {
           return i.textContent;
         }
       );
+
       console.log(hoveredProjectThis);
+      console.log(typeof hoveredProjectThis);
 
       hoveredProjectActive.filter(function () {
         if (hoveredProjectThis === hoveredProject) {
           console.log("Hey, you get matched!");
-          hoveredProjectThis.classList.remove("is-inactive");
-          hoveredProjectThis.classList.add("is-active");
+          document
+            .querySelectorAll("#cursor-outer .project__caption")
+            .classList.remove("is-inactive");
+          document
+            .querySelectorAll("#cursor-outer .project__caption")
+            .classList.add("is-active");
           gsap.to(document.querySelectorAll("#cursor-outer .is-active"), 0.8, {
             y: "0",
             yPercent: 0,
@@ -219,13 +245,13 @@ document.addEventListener("DOMContentLoaded", function () {
         .call(document.querySelectorAll(".project__caption"))
         .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
       console.log(hoveredProjectActive);
-      gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+      gsap.to(document.querySelectorAll("#cursor-outer .is-active"), 0.8, {
         y: "0",
         yPercent: -120,
-        onComplete: setBack,
+        onComplete: function setBack() {},
         ease: Expo.easeOut,
       });
-      gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+      gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
         y: "0",
         delay: 0.01,
         yPercent: 120,
@@ -235,8 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
       hoveredProjectActive.classList.add("is-inactive");
     },
     setBack: function () {
-      if (document.querySelector("#cursor-outer .is-inactive")) {
-        gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+      if (document.querySelectorAll("#cursor-outer .is-inactive")) {
+        gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
           y: "0",
           yPercent: 120,
           ease: Expo.easeOut,
@@ -294,6 +320,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
   GlobalPage.Init();
+  console.log(
+    "%cDESIGNED BY JL",
+    "color: #fff; background: #000; font-weight: 100"
+  );
 });
 
 //Progress Bar
