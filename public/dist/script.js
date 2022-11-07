@@ -1,3 +1,42 @@
+// Custom Cursor
+window.addEventListener("resize", () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  setTimeout(function () {
+    document
+      .querySelector(".cursor")
+      .setAttribute(
+        "style",
+        "opacity: 1 !important; mix-blend-mode: normal !important"
+      );
+    setTimeout(function () {
+      document
+        .querySelector(".cursor")
+        .setAttribute(
+          "style",
+          "opacity: 1 !important; mix-blend-mode: difference !important"
+        );
+    }, 100);
+  }, 100);
+});
+window.dispatchEvent(new Event("resize"));
+setTimeout(function () {
+  document
+    .querySelector(".cursor")
+    .setAttribute(
+      "style",
+      "opacity: 1 !important; mix-blend-mode: normal !important"
+    );
+  setTimeout(function () {
+    document
+      .querySelector(".cursor")
+      .setAttribute(
+        "style",
+        "opacity: 1 !important; mix-blend-mode: difference !important"
+      );
+  }, 100);
+}, 100);
+
 //Getting type device (mobile, touchdevide)
 window.isMobile = function () {
   let check = false;
@@ -40,56 +79,169 @@ document.addEventListener("DOMContentLoaded", function () {
       this.CursorAnimation(),
         this.cursorText(),
         this.mouseOver(),
+        this.setBack(),
         this.ItemTransition(),
         this.BurgerNav(),
         this.NavLinks();
     },
     CursorAnimation: function () {
       if (!isMobile() || !isTouchDevice()) {
-        const innerCursor = document.getElementById("innerCursor");
-        document.addEventListener("mousemove", moveCursor);
+        var speed = 0.15;
+        var fpms = 60 / 1000;
+        var innerCursor = document.getElementById("cursor-inner");
+        var outerCursor = document.getElementById("cursor-outer");
 
+        var xSet = gsap.quickSetter(innerCursor, "x", "px");
+        var ySet = gsap.quickSetter(innerCursor, "y", "px");
+        var xSet2 = gsap.quickSetter(outerCursor, "x", "px");
+        var ySet2 = gsap.quickSetter(outerCursor, "y", "px");
+        gsap.set(innerCursor, { xPercent: -50, yPercent: -50 });
+        gsap.set(outerCursor, { yPercent: -55 });
+        var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        var pos2 = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        var mouse = { x: pos.x, y: pos.y };
+        var mouse2 = { x: pos2.x, y: pos2.y };
         function moveCursor(e) {
-          let x = e.clientX;
-          let y = e.clientY;
-          // console.log(x,y);
-
-          innerCursor.style.left = `${x}px`;
-          innerCursor.style.top = `${y}px`;
-        }
-
-        const links = Array.from(document.querySelectorAll("a, button"));
-        // console.log(links);
-
-        links.forEach((link) => {
-          link.addEventListener("mouseover", () => {
-            innerCursor.classList.add("grow");
+          gsap.to(innerCursor, 0.3, {
+            css: { opacity: 1 },
+            ease: Expo.easeIn,
           });
-          link.addEventListener("mouseleave", () => {
-            innerCursor.classList.remove("grow");
+          window.removeEventListener("mousemove", moveCursor);
+        }
+      }
+      window.addEventListener("mousemove", moveCursor);
+      setTimeout(function () {
+        window.addEventListener("mousemove", (e) => {
+          mouse.x = e.x;
+          mouse.y = e.y;
+          mouse2.x = e.x;
+          mouse2.y = e.y;
+        });
+        gsap.ticker.add((time, deltaTime) => {
+          var delta = deltaTime * fpms;
+          var dt = 1.05 - Math.pow(1.0 - speed, delta);
+          var dt2 = 1.0 - Math.pow(1.0 - speed, delta);
+          pos.x += (mouse.x - pos.x) * dt;
+          pos.y += (mouse.y - pos.y) * dt;
+          pos2.x += (mouse2.x - pos2.x) * dt2;
+          pos2.y += (mouse2.y - pos2.y) * dt2;
+          xSet(pos.x);
+          ySet(pos.y);
+          xSet2(pos2.x);
+          ySet2(pos2.y);
+        });
+      }, 100);
+      document
+        .querySelector("body")
+        .addEventListener("mouseleave", function () {
+          gsap.to(".cursor", 0.3, { opacity: 0, ease: Expo.easeOut });
+        });
+      document
+        .querySelector("body")
+        .addEventListener("mouseenter", function () {
+          gsap.to(".cursor", 0.3, {
+            delay: 0.2,
+            opacity: 1,
+            ease: Expo.easeOut,
           });
         });
-      }
     },
     cursorText: function () {
       if (!isMobile() || !isTouchDevice()) {
-        const projectCap = document.querySelectorAll("#project__caption");
-        const cursorText = document.getElementById("cursor-outer");
+        var projectCap = document.querySelectorAll(".project__caption");
+        var cursorText = document.getElementById("cursor-outer");
 
         for (let i = 0; i < projectCap.length; i++) {
           const element = projectCap[i];
           const clonned = cursorText.appendChild(element.cloneNode(true));
           clonned.classList.add("is-inactive");
-        }    
+        }
+
+        var zoom = document.querySelectorAll("#caption__init");
+        console.log(zoom);
+
+        for (let i = 0; i < zoom.length; i++) {
+          const element = zoom[i];
+          element.addEventListener("mouseover", function mouseOver() {});
+          element.addEventListener("mouseout", function mouseOut() {});
+        }
       }
     },
     mouseOver: function () {
-      const projectInit = document.querySelectorAll("#caption__init");
-        for (let i = 0; i < projectInit.length; i++) {
-          const element = projectInit[i];
-          const hoveredProject = (element.textContent);
-          console.log(hoveredProject);
+      var hoveredProject = [].map.call(
+        document.querySelectorAll("#caption__init .project__caption"),
+        function (i) {
+          return i.textContent;
         }
+      );
+      console.log(hoveredProject);
+      // console.log(typeof hoveredProject);
+      var hoveredProjectActive = [].slice
+        .call(document.querySelectorAll("#cursor-outer .project__caption"))
+        .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
+      console.log(hoveredProjectActive.length);
+      var hoveredProjectThis = [].map.call(
+        document.querySelectorAll("#caption__init .project__caption"),
+        function (i) {
+          return i.textContent;
+        }
+      );
+      console.log(hoveredProjectThis);
+
+      hoveredProjectActive.filter(function () {
+        if (hoveredProjectThis === hoveredProject) {
+          console.log("Hey, you get matched!");
+          hoveredProjectThis.classList.remove("is-inactive");
+          hoveredProjectThis.classList.add("is-active");
+          gsap.to(document.querySelectorAll("#cursor-outer .is-active"), 0.8, {
+            y: "0",
+            yPercent: 0,
+            ease: Expo.easeOut,
+          });
+          gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
+            y: "0",
+            delay: 0.01,
+            yPercent: 120,
+            onComplete: function setBack() {},
+            ease: Expo.easeOut,
+          });
+        }
+      });
+    },
+    mouseOut: function () {
+      var hoveredProject = [].map.call(
+        document.querySelectorAll("#caption__init .project__caption"),
+        function (i) {
+          return i.textContent;
+        }
+      );
+      var hoveredProjectActive = [].slice
+        .call(document.querySelectorAll(".project__caption"))
+        .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
+      console.log(hoveredProjectActive);
+      gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+        y: "0",
+        yPercent: -120,
+        onComplete: setBack,
+        ease: Expo.easeOut,
+      });
+      gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+        y: "0",
+        delay: 0.01,
+        yPercent: 120,
+        ease: Expo.easeOut,
+      });
+      hoveredProjectActive.classList.remove("is-active");
+      hoveredProjectActive.classList.add("is-inactive");
+    },
+    setBack: function () {
+      if (document.querySelector("#cursor-outer .is-inactive")) {
+        gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+          y: "0",
+          yPercent: 120,
+          ease: Expo.easeOut,
+        });
+      }
     },
     ItemTransition: function () {
       gsap.utils

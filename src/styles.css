@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --gutter-width: 4vw;
+    --outer-margin: 4vw;
+}
+
+@media only screen and (min-width:768px) {
+    :root {
+        --gutter-width: 3vw;
+        --outer-margin: 3vw;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    :root {
+        --gutter-width: 2vw;
+        --outer-margin: 2vw;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    :root {
+        --gutter-width: 1.5vw;
+        --outer-margin: 1.5vw;
+    }
+}
+
 /* Custom Font */
 
 @font-face {
@@ -13,10 +39,6 @@
 }
 
 /*  Fade In GSAP animation */
-
-* {
-    cursor: none;
-}
 
 .js-media-visibility>* {
     opacity: 0;
@@ -34,15 +56,29 @@
 
 /* Custom cursor */
 
-.inner-cursor {
-    transition: width .5s, height .5s;
-    z-index: 999;
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center
 }
 
-.inner-cursor.grow {
-    width: 3.125rem;
-    height: 3.125rem;
-    transition: width .5s, height .5s;
+#cursor-inner {
+    position: absolute;
+    opacity: 1;
+    transform: scale(0.2);
+    width: calc(10 * var(--outer-margin) + 12px);
+    height: calc(10 * var(--outer-margin) + 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    mix-blend-mode: difference !important;
+    color: white
 }
 
 #cursor-outer {
@@ -62,6 +98,12 @@
     position: absolute;
     display: block;
     transform: translateY(120%)
+}
+
+.project__caption {
+    position: relative;
+    display: none;
+    z-index: -1
 }
 
 /* Content Home Animations */
@@ -526,7 +568,6 @@ html.no-touchevents .c-home__media-container:hover::before {
 
 .c-navbar {
     left: 0;
-    margin-top: 15px;
     position: fixed;
     top: 0;
     -webkit-transition: opacity .3s, visibility .3s;
