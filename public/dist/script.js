@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.to(cursorLoaded, 0.5, {
         delay: 0.5,
         left: 20,
+        opacity: 1,
         ease: Expo.easeOut,
       });
       if (isMobile() || isTouchDevice()) {
@@ -202,16 +203,12 @@ document.addEventListener("DOMContentLoaded", function () {
             element.cloneNode(true)
           );
           clonnedProject.classList.add("is-inactive");
-          console.log(clonnedProject.textContent);
+          console.log(typeof clonnedProject);
         }
         const projectOriginal = document.querySelectorAll("#project__original");
-        projectOriginal.forEach((project) => {
-          project.addEventListener("mouseover", function mouseOver() {
-            console.log("hovered!");
-          });
-          project.addEventListener("mouseout", function mouseOut() {
-            console.log("hover out!");
-          });
+        projectOriginal.forEach((element) => {
+          element.addEventListener("mouseover", function mouseOver() {}, true);
+          element.addEventListener("mouseout", function mouseOut() {}, true);
         });
       }
     },
@@ -222,15 +219,70 @@ document.addEventListener("DOMContentLoaded", function () {
           return i.textContent;
         }
       );
+      console.log(typeof hoveredProject[0]);
       console.log(hoveredProject[0]);
-      const hoveredProjectActive = [].slice
-        .call(document.querySelectorAll("#cursor-outer .project__caption"))
-        .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
+
+      //Custom Function to achieve same as => :contains() jquery
+      function contains(selector, text) {
+        var elements = document.querySelectorAll(selector);
+        return [].filter.call(elements, function (element) {
+          return (new RegExp(text)).test(element.textContent);
+        });
+      }
+
+      const hoveredProjectActive = contains(
+        "#cursor-outer .project__caption",
+        hoveredProject[0]
+      );
+      console.log(hoveredProjectActive[0].textContent);
 
       hoveredProjectActive.filter(function () {
         if (hoveredProjectActive.textContent === hoveredProject) {
-          console.log("Hey, you get matched!");
+          hoveredProjectActive.forEach((element) => {
+            element.classList.remove("is-inactive");
+            element.classList.add("is-active");
+            gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+              y: "0",
+              yPercent: 0,
+              ease: Expo.easeOut,
+            });
+            gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+              y: "0",
+              delay: 0.01,
+              yPercent: 120,
+              onComplete: function setBack() {},
+              ease: Expo.easeOut,
+            });
+          });
         }
+      });
+    },
+    mouseOut: function () {
+      const hoveredProject = [].map.call(
+        document.querySelectorAll("#project__original .project__caption"),
+        function (i) {
+          return i.textContent;
+        }
+      );
+      const hoveredProjectActive = contains(
+        ".project__caption",
+        hoveredProject
+      );
+      gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+        y: "0",
+        yPercent: -120,
+        onComplete: function setBack() {},
+        ease: Expo.easeOut,
+      });
+      gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+        y: "0",
+        delay: 0.01,
+        yPercent: 120,
+        ease: Expo.easeOut,
+      });
+      hoveredProjectActive.forEach(element => {
+        element.classList.remove("is-active");
+        element.classList.add("is-inactive");
       });
     },
     setBack: function () {
