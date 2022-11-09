@@ -78,12 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
     Init: function () {
       this.onLoaded(),
         this.CursorAnimation(),
+        this.cursorScale(),
         this.cursorText(),
-        this.mouseOver(),
-        this.setBack(),
-        this.ItemTransition(),
-        this.BurgerNav(),
-        this.NavLinks();
+        this.mouseOver();
+      this.setBack(), this.ItemTransition(), this.BurgerNav(), this.NavLinks();
     },
     onLoaded: function () {
       var cursorLoaded = document.getElementById("cursor-outer");
@@ -92,176 +90,151 @@ document.addEventListener("DOMContentLoaded", function () {
         left: 20,
         ease: Expo.easeOut,
       });
+      if (isMobile() || isTouchDevice()) {
+        gsap.set("#cursor-inner", { scale: 0 });
+      }
     },
     CursorAnimation: function () {
       if (!isMobile() || !isTouchDevice()) {
-        var speed = 0.15;
-        var fpms = 60 / 1000;
-        var innerCursor = document.getElementById("cursor-inner");
-        var outerCursor = document.getElementById("cursor-outer");
+        gsap.set("#cursor-inner", { xPercent: -50, yPercent: -50 });
+        gsap.set("#cursor-outer", { yPercent: -55 });
 
-        var xSet = gsap.quickSetter(innerCursor, "x", "px");
-        var ySet = gsap.quickSetter(innerCursor, "y", "px");
-        var xSet2 = gsap.quickSetter(outerCursor, "x", "px");
-        var ySet2 = gsap.quickSetter(outerCursor, "y", "px");
-        gsap.set(innerCursor, { xPercent: -50, yPercent: -50 });
-        gsap.set(outerCursor, { yPercent: -55 });
-        var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        var pos2 = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        var mouse = { x: pos.x, y: pos.y };
-        var mouse2 = { x: pos2.x, y: pos2.y };
-        function moveCursor(e) {
-          gsap.to(innerCursor, 0.3, {
-            css: { opacity: 1 },
+        //Cursor - Inner
+        const cursorInner = document.querySelector("#cursor-inner");
+        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        const mouse = { x: pos.x, y: pos.y };
+        const xSet = gsap.quickSetter(cursorInner, "x", "px");
+        const ySet = gsap.quickSetter(cursorInner, "y", "px");
+
+        //Cursor - Outer
+        const cursorOuter = document.querySelector("#cursor-outer");
+        const pos2 = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        const mouse2 = { x: pos2.x, y: pos2.y };
+        const xSet2 = gsap.quickSetter(cursorOuter, "x", "px");
+        const ySet2 = gsap.quickSetter(cursorOuter, "y", "px");
+
+        const speed = 0.2;
+
+        function moveCursor() {
+          gsap.to(cursorInner, 0.3, {
+            css: {
+              opacity: 1,
+            },
             ease: Expo.easeIn,
           });
           window.removeEventListener("mousemove", moveCursor);
         }
+
+        window.addEventListener("mousemove", moveCursor);
+        setTimeout(function () {
+          window.addEventListener("mousemove", (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+            mouse2.x = e.x;
+            mouse2.y = e.y;
+          });
+
+          gsap.ticker.add(() => {
+            // adjust speed for higher refresh monitors
+            const dt = 1.05 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+            const dt2 = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+
+            pos.x += (mouse.x - pos.x) * dt;
+            pos.y += (mouse.y - pos.y) * dt;
+
+            pos2.x += (mouse2.x - pos2.x) * dt2;
+            pos2.y += (mouse2.y - pos2.y) * dt2;
+
+            xSet(pos.x);
+            ySet(pos.y);
+
+            xSet2(pos2.x);
+            ySet2(pos2.y);
+          });
+        }, 100);
+        document
+          .querySelector("body")
+          .addEventListener("mouseleave", function () {
+            gsap.to(".cursor", 0.3, { opacity: 0, ease: Expo.easeOut });
+          });
+        document
+          .querySelector("body")
+          .addEventListener("mouseenter", function () {
+            gsap.to(".cursor", 0.3, {
+              delay: 0.2,
+              opacity: 1,
+              ease: Expo.easeOut,
+            });
+          });
       }
-      window.addEventListener("mousemove", moveCursor);
-      setTimeout(function () {
-        window.addEventListener("mousemove", (e) => {
-          mouse.x = e.x;
-          mouse.y = e.y;
-          mouse2.x = e.x;
-          mouse2.y = e.y;
-        });
-        gsap.ticker.add((time, deltaTime) => {
-          var delta = deltaTime * fpms;
-          var dt = 1.05 - Math.pow(1.0 - speed, delta);
-          var dt2 = 1.0 - Math.pow(1.0 - speed, delta);
-          pos.x += (mouse.x - pos.x) * dt;
-          pos.y += (mouse.y - pos.y) * dt;
-          pos2.x += (mouse2.x - pos2.x) * dt2;
-          pos2.y += (mouse2.y - pos2.y) * dt2;
-          xSet(pos.x);
-          ySet(pos.y);
-          xSet2(pos2.x);
-          ySet2(pos2.y);
-        });
-      }, 100);
-      document
-        .querySelector("body")
-        .addEventListener("mouseleave", function () {
-          gsap.to(".cursor", 0.3, { opacity: 0, ease: Expo.easeOut });
-        });
-      document
-        .querySelector("body")
-        .addEventListener("mouseenter", function () {
-          gsap.to(".cursor", 0.3, {
-            delay: 0.2,
-            opacity: 1,
-            ease: Expo.easeOut,
+    },
+    cursorScale: function () {
+      if (!isMobile()) {
+        var hasScale = Array.from(document.querySelectorAll("a, button"));
+        hasScale.forEach((hasScale) => {
+          hasScale.addEventListener("mouseover", function (event) {
+            gsap.to("#cursor-inner", 0.6, { scale: 1, ease: Power4.easeOut });
+            gsap.to(event.currentTarget, 1, {
+              x: 0,
+              y: 0,
+              ease: Power2.easeOut,
+            });
+          });
+          hasScale.addEventListener("mouseout", function (event) {
+            gsap.to("#cursor-inner", 0.6, { scale: 0.2, ease: Power4.easeOut });
+            gsap.to(event.currentTarget, 1, {
+              x: 0,
+              y: 0,
+              ease: Power2.easeOut,
+            });
           });
         });
+      }
     },
     cursorText: function () {
       if (!isMobile() || !isTouchDevice()) {
-        var projectCap = document.querySelectorAll(".project__caption");
-        var cursorText = document.getElementById("cursor-outer");
+        const projectCaption = document.querySelectorAll(".project__caption");
+        const projectCursor = document.getElementById("cursor-outer");
 
-        for (let i = 0; i < projectCap.length; i++) {
-          const element = projectCap[i];
-          const clonned = cursorText.appendChild(element.cloneNode(true));
-          clonned.classList.add("is-inactive");
+        for (let i = 0; i < projectCaption.length; i++) {
+          const element = projectCaption[i];
+          const clonnedProject = projectCursor.appendChild(
+            element.cloneNode(true)
+          );
+          clonnedProject.classList.add("is-inactive");
+          console.log(clonnedProject.textContent);
         }
-
-        var hasOriginalCaption = document.querySelectorAll("#caption__init");
-        for (let i = 0; i < hasOriginalCaption.length; i++) {
-          const element = hasOriginalCaption[i];
-          element.addEventListener("mouseover", function mouseOver() {
-            console.log("Hey, you hover me!");
+        const projectOriginal = document.querySelectorAll("#project__original");
+        projectOriginal.forEach((project) => {
+          project.addEventListener("mouseover", function mouseOver() {
+            console.log("hovered!");
           });
-          element.addEventListener("mouseout", function mouseOut() {
-            console.log("Hey, you hover out of me!");
+          project.addEventListener("mouseout", function mouseOut() {
+            console.log("hover out!");
           });
-        }
+        });
       }
     },
     mouseOver: function () {
-      var hoveredProject = [].map.call(
-        document.querySelectorAll("#caption__init .project__caption"),
+      const hoveredProject = [].map.call(
+        document.querySelectorAll("#project__original .project__caption"),
         function (i) {
           return i.textContent;
         }
       );
-      const string = JSON.stringify(hoveredProject);
-      console.log(string);
-      console.log(typeof string);
-
-      console.log(hoveredProject);
-      console.log(typeof hoveredProject);
-
-      var hoveredProjectActive = [].slice
+      console.log(hoveredProject[0]);
+      const hoveredProjectActive = [].slice
         .call(document.querySelectorAll("#cursor-outer .project__caption"))
         .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
 
-      console.log(hoveredProjectActive.length);
-      console.log(hoveredProjectActive);
-      console.log(typeof hoveredProjectActive);
-
-      var hoveredProjectThis = [].map.call(
-        document.querySelectorAll("#cursor-outer .project__caption"),
-        function (i) {
-          return i.textContent;
-        }
-      );
-
-      console.log(hoveredProjectThis);
-      console.log(typeof hoveredProjectThis);
-
       hoveredProjectActive.filter(function () {
-        if (hoveredProjectThis === hoveredProject) {
+        if (hoveredProjectActive.textContent === hoveredProject) {
           console.log("Hey, you get matched!");
-          document
-            .querySelectorAll("#cursor-outer .project__caption")
-            .classList.remove("is-inactive");
-          document
-            .querySelectorAll("#cursor-outer .project__caption")
-            .classList.add("is-active");
-          gsap.to(document.querySelectorAll("#cursor-outer .is-active"), 0.8, {
-            y: "0",
-            yPercent: 0,
-            ease: Expo.easeOut,
-          });
-          gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
-            y: "0",
-            delay: 0.01,
-            yPercent: 120,
-            onComplete: function setBack() {},
-            ease: Expo.easeOut,
-          });
         }
       });
-    },
-    mouseOut: function () {
-      var hoveredProject = [].map.call(
-        document.querySelectorAll("#caption__init .project__caption"),
-        function (i) {
-          return i.textContent;
-        }
-      );
-      var hoveredProjectActive = [].slice
-        .call(document.querySelectorAll(".project__caption"))
-        .filter((el) => el.innerText.indexOf(`${hoveredProject}`) !== -1);
-      console.log(hoveredProjectActive);
-      gsap.to(document.querySelectorAll("#cursor-outer .is-active"), 0.8, {
-        y: "0",
-        yPercent: -120,
-        onComplete: function setBack() {},
-        ease: Expo.easeOut,
-      });
-      gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
-        y: "0",
-        delay: 0.01,
-        yPercent: 120,
-        ease: Expo.easeOut,
-      });
-      hoveredProjectActive.classList.remove("is-active");
-      hoveredProjectActive.classList.add("is-inactive");
     },
     setBack: function () {
-      if (document.querySelectorAll("#cursor-outer .is-inactive")) {
+      if (document.querySelector("#cursor-outer .is-inactive")) {
         gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
           y: "0",
           yPercent: 120,

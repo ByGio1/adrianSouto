@@ -78,7 +78,23 @@
     left: 0;
     top: 0;
     mix-blend-mode: difference !important;
-    color: white
+    border-radius: 50%;
+    color: white;
+}
+
+.progress {
+    position: absolute;
+    transform: rotate(-90deg);
+    stroke: white
+}
+
+.progress circle {
+    stroke: white;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dasharray 0s cubic-bezier(0.16, 1, 0.3, 1);
+    stroke-dasharray: 0, 100;
+    stroke-dashoffset: 0
 }
 
 #cursor-outer {
@@ -92,6 +108,10 @@
     color: white;
     font-size: 1em;
     opacity: 0
+}
+
+@media only screen and (max-width:768px) {
+    #cursor-outer {}
 }
 
 #cursor-outer .project__caption {
