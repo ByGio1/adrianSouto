@@ -80,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.onLoaded(),
         this.CursorAnimation(),
         this.cursorScale(),
-        this.cursorText(),
+        /* this.cursorText(),
         this.mouseOver(),
         this.mouseOut(),
-        this.setBack(),
+        this.setBack(), */
         this.ItemTransition(),
         this.BurgerNav(),
         this.NavLinks();
@@ -176,10 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     cursorScale: function () {
       if (!isMobile()) {
-        var hasScale = Array.from(document.querySelectorAll("a, button"));
+        var hasScale = Array.from(document.querySelectorAll("a:not(.zoom), button"));
         hasScale.forEach((hasScale) => {
           hasScale.addEventListener("mouseover", function (event) {
-            gsap.to("#cursor-inner", 0.6, { scale: 1, ease: Power4.easeOut });
+            gsap.to("#cursor-inner", 0.6, { scale: 1, ease: Power2.easeOut });
             gsap.to(event.currentTarget, 1, {
               x: 0,
               y: 0,
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           });
           hasScale.addEventListener("mouseout", function (event) {
-            gsap.to("#cursor-inner", 0.6, { scale: 0.2, ease: Power4.easeOut });
+            gsap.to("#cursor-inner", 0.6, { scale: 0.2, ease: Power2.easeOut });
             gsap.to(event.currentTarget, 1, {
               x: 0,
               y: 0,
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     },
-    cursorText: function () {
+    /* cursorText: function () {
       if (!isMobile() || !isTouchDevice()) {
         const projectCaption = document.querySelectorAll(".project__caption");
         const projectCursor = document.getElementById("cursor-outer");
@@ -224,8 +224,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return i.textContent;
         }
       );
-      //console.log(typeof hoveredProject[0]);
-      //console.log(hoveredProject[0]);
+      console.log(typeof hoveredProject);
+      console.log(hoveredProject);
 
       //Custom Function to achieve same as => :contains() jquery
       function contains(selector, text) {
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ease: Expo.easeOut,
         });
       }
-    },
+    }, */
     ItemTransition: function () {
       gsap.utils
         .toArray("#js-home-items >div:last-of-type .js-home-item")

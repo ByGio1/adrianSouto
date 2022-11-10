@@ -50,6 +50,11 @@
     <meta property="og:type" content="website" />
 
     <script src="./dist/lazysizes.min.js" async="async"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="./dist/script.js"></script>
@@ -388,8 +393,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="/personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="
                     background-color: rgb(255, 82, 0);
                     color: rgb(255, 82, 0);
@@ -423,8 +427,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="./personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="
                     background-color: rgb(243, 80, 17);
                     color: rgb(243, 80, 17);
@@ -458,8 +461,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="./personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="
                     background-color: rgb(37, 173, 142);
                     color: rgb(37, 173, 142);
@@ -493,8 +495,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="./personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="background-color: #eeca6f; color: #eeca6f"
                 >
                   <picture
@@ -525,8 +526,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="/professional"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="background-color: #d719df; color: #d719df"
                 >
                   <picture
@@ -557,8 +557,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="./personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="background-color: #ff377f; color: #ff377f"
                 >
                   <picture
@@ -589,8 +588,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="./personal"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="background-color: #107541; color: #107541"
                 >
                   <picture
@@ -621,8 +619,7 @@
               <div class="c-home__item js-home-item">
                 <a
                   href="/professional"
-                  id="project__original"
-                  class="c-home__media-container js-home-item-media-container"
+                  class="zoom c-home__media-container js-home-item-media-container"
                   style="background-color: #078a26; color: #078a26"
                 >
                   <picture
@@ -695,6 +692,104 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      if (!isMobile() || !isTouchDevice()) {
+        const projectCaption = document.querySelectorAll(".project__caption");
+        const projectCursor = document.getElementById("cursor-outer");
+
+        for (let i = 0; i < projectCaption.length; i++) {
+          const element = projectCaption[i];
+          const clonnedProject = projectCursor.appendChild(
+            element.cloneNode(true)
+          );
+          clonnedProject.classList.add("is-inactive");
+          console.log(clonnedProject.textContent);
+        }
+        const projectOriginal = document.querySelectorAll(".zoom");
+        projectOriginal.forEach((element) => {
+          element.addEventListener("mouseover", this.mouseOver);
+          element.addEventListener("mouseout", this.mouseOut);
+        });
+      }
+
+      function mouseOver() {
+        var hoveredProject = $(this).find(".project__caption").text();
+        console.log(hoveredProject);
+        //Custom Function to achieve same as => :contains() jquery
+        function contains(selector, text) {
+          var elements = document.querySelectorAll(selector);
+          return [].filter.call(elements, function (element) {
+            return new RegExp(text).test(element.textContent);
+          });
+        }
+
+        const hoveredProjectActive = contains(
+          "#cursor-outer .project__caption",
+          hoveredProject
+        );
+        console.log(hoveredProjectActive);
+
+        $(hoveredProjectActive).filter(function () {
+          if ($(this).text() === hoveredProject) {
+            $(this).removeClass("is-inactive").addClass("is-active");
+            gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+              y: "0",
+              yPercent: 0,
+              ease: Expo.easeOut,
+            });
+            gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+              y: "0",
+              delay: 0.01,
+              yPercent: 120,
+              onComplete: setBack(),
+              ease: Expo.easeOut,
+            });
+          }
+        });
+      }
+      function mouseOut() {
+        var hoveredProject = $(this).find(".project__caption").text();
+        //Custom Function to achieve same as => :contains() jquery
+        function contains(selector, text) {
+          var elements = document.querySelectorAll(selector);
+          return [].filter.call(elements, function (element) {
+            return new RegExp(text).test(element.textContent);
+          });
+        }
+
+        const hoveredProjectActive = contains(
+          ".project__caption",
+          hoveredProject
+        );
+        gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
+          y: "0",
+          yPercent: -120,
+          onComplete: setBack(),
+          ease: Expo.easeOut,
+        });
+        gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
+          y: "0",
+          delay: 0.01,
+          yPercent: 120,
+          ease: Expo.easeOut,
+        });
+        hoveredProjectActive.forEach((element) => {
+          element.classList.remove("is-active");
+          element.classList.add("is-inactive");
+        });
+      }
+      function setBack() {
+        if (document.querySelector("#cursor-outer .is-inactive")) {
+          gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
+            y: "0",
+            yPercent: 120,
+            ease: Expo.easeOut,
+          });
+        }
+      }
+    </script>
+
     <script>
       document.body.setAttribute("style", "overflow:hidden;");
       const tll = gsap.timeline({
