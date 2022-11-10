@@ -74,14 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //HomePage GSAP Animations (Global Function)
+
   GlobalPage = {
     Init: function () {
       this.onLoaded(),
         this.CursorAnimation(),
         this.cursorScale(),
         this.cursorText(),
-        this.mouseOver();
-      this.setBack(), this.ItemTransition(), this.BurgerNav(), this.NavLinks();
+        this.mouseOver(),
+        this.mouseOut(),
+        this.setBack(),
+        this.ItemTransition(),
+        this.BurgerNav(),
+        this.NavLinks();
     },
     onLoaded: function () {
       var cursorLoaded = document.getElementById("cursor-outer");
@@ -203,12 +208,12 @@ document.addEventListener("DOMContentLoaded", function () {
             element.cloneNode(true)
           );
           clonnedProject.classList.add("is-inactive");
-          console.log(typeof clonnedProject);
+          console.log(clonnedProject.textContent);
         }
         const projectOriginal = document.querySelectorAll("#project__original");
         projectOriginal.forEach((element) => {
-          element.addEventListener("mouseover", function mouseOver() {}, true);
-          element.addEventListener("mouseout", function mouseOut() {}, true);
+          element.addEventListener("mouseover", this.mouseOver);
+          element.addEventListener("mouseout", this.mouseOut);
         });
       }
     },
@@ -219,28 +224,29 @@ document.addEventListener("DOMContentLoaded", function () {
           return i.textContent;
         }
       );
-      console.log(typeof hoveredProject[0]);
-      console.log(hoveredProject[0]);
+      //console.log(typeof hoveredProject[0]);
+      //console.log(hoveredProject[0]);
 
       //Custom Function to achieve same as => :contains() jquery
       function contains(selector, text) {
         var elements = document.querySelectorAll(selector);
         return [].filter.call(elements, function (element) {
-          return (new RegExp(text)).test(element.textContent);
+          return new RegExp(text).test(element.textContent);
         });
       }
 
       const hoveredProjectActive = contains(
         "#cursor-outer .project__caption",
-        hoveredProject[0]
+        hoveredProject
       );
-      console.log(hoveredProjectActive[0].textContent);
+      //console.log(hoveredProjectActive);
 
       hoveredProjectActive.filter(function () {
         if (hoveredProjectActive.textContent === hoveredProject) {
           hoveredProjectActive.forEach((element) => {
             element.classList.remove("is-inactive");
             element.classList.add("is-active");
+            console.log("hey you matched");
             gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
               y: "0",
               yPercent: 0,
@@ -264,6 +270,15 @@ document.addEventListener("DOMContentLoaded", function () {
           return i.textContent;
         }
       );
+
+      //Custom Function to achieve same as => :contains() jquery
+      function contains(selector, text) {
+        var elements = document.querySelectorAll(selector);
+        return [].filter.call(elements, function (element) {
+          return new RegExp(text).test(element.textContent);
+        });
+      }
+
       const hoveredProjectActive = contains(
         ".project__caption",
         hoveredProject
@@ -280,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
         yPercent: 120,
         ease: Expo.easeOut,
       });
-      hoveredProjectActive.forEach(element => {
+      hoveredProjectActive.forEach((element) => {
         element.classList.remove("is-active");
         element.classList.add("is-inactive");
       });
