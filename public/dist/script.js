@@ -57,7 +57,7 @@ window.isTouchDevice = function () {
   return typeof window.ontouchstart !== "undefined";
 };
 
-//ItemTransition - HomePage GSAP animation
+//HomePage GSAP animation
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //HomePage GSAP Animations (Global Function)
-
   GlobalPage = {
     Init: function () {
       this.onLoaded(),
@@ -402,12 +401,16 @@ function highlightText(id, className) {
   let elm = document.getElementById(id);
   let text = elm.innerText.split(" ");
 
-  const highlight = `<span class="${className}">${text.splice(-1).join(" ")}</span>`;
+  const highlight = `<span class="${className}">${text
+    .splice(-1)
+    .join(" ")}</span>`;
   elm.innerHTML = text.join(" ") + highlight;
 }
 
-window.addEventListener('load', function () {
-  highlightText("project", "next__project");  // Use function created above.
-}, false);
-
-
+window.addEventListener(
+  "load",
+  function () {
+    highlightText("project", "next__project"); // Use function created above.
+  },
+  false
+);
