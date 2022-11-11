@@ -466,17 +466,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
 .visible {
   visibility: visible;
 }
@@ -724,6 +713,18 @@ video {
     font-weight: 700;
     font-display: swap;
     src: local('Helvetica Neue'), url(https://fonts.cdnfonts.com/s/29136/HelveticaNeueBold.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'alluraregular';
+    src: url('/src/assets/allura-regular-webfont.wof2') format('woff2'),
+         url('/src/assets/allura-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.next__project {
+    font-family: "alluraregular";
 }
 
 /*  Fade In GSAP animation */
