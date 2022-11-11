@@ -397,20 +397,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Create next project page-transition
-window.addEventListener("DOMContentLoaded", () => {
-  function highlightText(id, className) {
-    let elm = document.getElementById(id);
-    let text = elm.innerText.split(" ");
 
-    const highlight =
-      ' <span class="' +
-      className +
-      '">' +
-      text.splice(-2).join(" ") +
-      "</span>";
-    elm.innerHTML = text.join(" ") + highlight;
-  }
+function highlightText(id, className) {
+  let elm = document.getElementById(id);
+  let text = elm.innerText.split(" ");
 
-  const nextProject = highlightText("project", "next__project");
-  console.log(nextProject);
-});
+  const highlight = `<span class="${className}">${text.splice(-1).join(" ")}</span>`;
+  elm.innerHTML = text.join(" ") + highlight;
+}
+
+window.addEventListener('load', function () {
+  highlightText("project", "next__project");  // Use function created above.
+}, false);
+
+

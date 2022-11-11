@@ -125,7 +125,9 @@
     <nav class="c-navbar flex items-center justify-between p-6" id="js-navbar">
       <!-- Logo -->
       <div class="z-[300]">
-        <a href="index.html" class="text-lg tracking-tight">Adrian Souto</a>
+        <a href="index.html" id="project" class="text-lg tracking-tight"
+          >Adrian Souto</a
+        >
       </div>
       <!-- Menu Toggle -->
       <button
@@ -392,32 +394,65 @@
                 <a
                   href="/personal"
                   class="zoom c-home__media-container js-home-item-media-container"
-                  style="
-                    background-color: #1f6ad1;
-                    color: #1f6ad1;
-                  "
+                  style="background-color: #1f6ad1; color: #1f6ad1"
                 >
-                  <picture
-                    ><source
-                      srcset="
-                        https://images.prismic.io/adriansouto/8370ed89-b44f-4a82-a275-56b8e0bc2a94_1_feed.jpg?auto=compress;width=1000
-                      "
-                      data-srcset="https://images.prismic.io/adriansouto/8370ed89-b44f-4a82-a275-56b8e0bc2a94_1_feed.jpg?auto=compress;width=1000"
-                      media="(min-width: 768px)"
+                  <!-- Feed 1 -->
+                  <picture>
+                    <!-- Image Mobile view -->
+                    <source
+                      type="image/webp"
+                      data-srcset="images/webp/1_feed_small_x320.webp"
+                      media="(min-width: 320px)"
+                      srcset="images/webp/1_feed_small_x320.webp"
                     />
                     <source
-                      srcset="
-                        https://images.prismic.io/adriansouto/8370ed89-b44f-4a82-a275-56b8e0bc2a94_1_feed.jpg?auto=compress;width=600
-                      "
-                      data-srcset="https://images.prismic.io/adriansouto/8370ed89-b44f-4a82-a275-56b8e0bc2a94_1_feed.jpg?auto=compress;width=600"
-                      media="(min-width: 300px)"
+                      type="image/jpeg"
+                      data-srcset="images/1_feed_small_x320.jpg"
+                      media="(min-width: 320px)"
+                      srcset="images/1_feed_small_x320.jpg"
+                    />
+                    <!-- Image Tablet view -->
+                    <source
+                      type="image/webp"
+                      data-srcset="images/webp/1_feed_medium_x768.webp"
+                      media="(min-width: 768px)"
+                      srcset="images/webp/1_feed_medium_x768.webp"
+                    />
+                    <source
+                      type="image/jpeg"
+                      data-srcset="images/1_feed_medium_x768.jpg"
+                      media="(min-width: 768px)"
+                      srcset="images/1_feed_medium_x768.jpg"
+                    />
+                    <!-- Image Desktop view -->
+                    <source
+                      type="image/webp"
+                      data-srcset="images/webp/1_feed_large_x1440.webp"
+                      media="(min-width: 1440px)"
+                      srcset="images/webp/1_feed_large_x1440.webp"
+                    />
+                    <source
+                      type="image/jpeg"
+                      data-srcset="images/1_feed_large_x1440.jpg"
+                      media="(min-width: 1440px)"
+                      srcset="images/1_feed_large_x1440.jpg"
                     />
                     <img
-                      src="https://images.prismic.io/adriansouto/8370ed89-b44f-4a82-a275-56b8e0bc2a94_1_feed.jpg?auto=compress;width=50"
+                      data-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                      data-srcset="images/1_feed_small_x320.jpg 320w, images/1_feed_medium_x768.jpg 768w, images/1_feed_large_x1440.jpg 1440w"
+                      loading="lazy"
                       class="c-home__media js-home-item-media lazyload"
+                      alt="8. PICTURE tag + webP + native lazy load + lazy load by Lazysizes + responsive"
+                      title="8. PICTURE tag + webP + native lazy load + lazy load by Lazysizes + responsive"
+                      srcset="
+                        images/1_feed_small_x320.jpg   320w,
+                        images/1_feed_medium_x768.jpg  768w,
+                        images/1_feed_large_x1440.jpg 1440w
+                      "
+                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                     />
                   </picture>
-                  <div id="project" class="project__caption">As the Crow Flies</div>
+                  <div class="project__caption">As the Crow Flies</div>
                 </a>
               </div>
             </div>
@@ -451,7 +486,7 @@
                       class="c-home__media js-home-item-media lazyloaded"
                     />
                   </picture>
-                  <div id="project" class="project__caption">IN2 Design</div>
+                  <div class="project__caption">IN2 Design</div>
                 </a>
               </div>
             </div>
@@ -485,7 +520,7 @@
                       class="c-home__media js-home-item-media lazyloaded"
                     />
                   </picture>
-                  <div id="project" class="project__caption">IN2 Design Portraits</div>
+                  <div class="project__caption">IN2 Design Portraits</div>
                 </a>
               </div>
             </div>
@@ -516,7 +551,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
-                  <div id="project" class="project__caption">Publica Images</div>
+                  <div class="project__caption">Publica Images</div>
                 </a>
               </div>
             </div>
@@ -547,7 +582,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
-                  <div id="project" class="project__caption">Portraits II</div>
+                  <div class="project__caption">Portraits II</div>
                 </a>
               </div>
             </div>
@@ -557,9 +592,9 @@
                   href="./personal"
                   class="zoom c-home__media-container js-home-item-media-container"
                   style="
-                  background-color: rgb(255, 82, 0);
-                  color: rgb(255, 82, 0);
-                "
+                    background-color: rgb(255, 82, 0);
+                    color: rgb(255, 82, 0);
+                  "
                 >
                   <picture
                     ><source
@@ -581,7 +616,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
-                  <div id="project" class="project__caption">Furnitures & Lights</div>
+                  <div class="project__caption">Furnitures & Lights</div>
                 </a>
               </div>
             </div>
@@ -612,7 +647,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
-                  <div id="project" class="project__caption">Superstars</div>
+                  <div class="project__caption">Superstars</div>
                 </a>
               </div>
             </div>
@@ -643,7 +678,7 @@
                       class="c-home__media js-home-item-media lazyload"
                     />
                   </picture>
-                  <div id="project" class="project__caption">Work in Progres II</div>
+                  <div class="project__caption">Work in Progres II</div>
                 </a>
               </div>
             </div>
