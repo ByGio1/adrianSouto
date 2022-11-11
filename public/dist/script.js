@@ -176,7 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     cursorScale: function () {
       if (!isMobile()) {
-        var hasScale = Array.from(document.querySelectorAll("a:not(.zoom), button"));
+        var hasScale = Array.from(
+          document.querySelectorAll("a:not(.zoom), button")
+        );
         hasScale.forEach((hasScale) => {
           hasScale.addEventListener("mouseover", function (event) {
             gsap.to("#cursor-inner", 0.6, { scale: 1, ease: Power2.easeOut });
@@ -392,4 +394,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
     main.classList.toggle("open-menu");
   });
+});
+
+//Create next project page-transition
+window.addEventListener("DOMContentLoaded", () => {
+  function highlightText(id, className) {
+    let elm = document.getElementById(id);
+    let text = elm.innerText.split(" ");
+
+    const highlight =
+      ' <span class="' +
+      className +
+      '">' +
+      text.splice(-2).join(" ") +
+      "</span>";
+    elm.innerHTML = text.join(" ") + highlight;
+  }
+
+  const nextProject = highlightText("project", "next__project");
+  console.log(nextProject);
 });
