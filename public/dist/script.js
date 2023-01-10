@@ -79,10 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.onLoaded(),
         this.CursorAnimation(),
         this.cursorScale(),
-        /* this.cursorText(),
-        this.mouseOver(),
-        this.mouseOut(),
-        this.setBack(), */
         this.ItemTransition(),
         this.BurgerNav(),
         this.NavLinks();
@@ -198,118 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     },
-    /* cursorText: function () {
-      if (!isMobile() || !isTouchDevice()) {
-        const projectCaption = document.querySelectorAll(".project__caption");
-        const projectCursor = document.getElementById("cursor-outer");
-
-        for (let i = 0; i < projectCaption.length; i++) {
-          const element = projectCaption[i];
-          const clonnedProject = projectCursor.appendChild(
-            element.cloneNode(true)
-          );
-          clonnedProject.classList.add("is-inactive");
-          console.log(clonnedProject.textContent);
-        }
-        const projectOriginal = document.querySelectorAll("#project__original");
-        projectOriginal.forEach((element) => {
-          element.addEventListener("mouseover", this.mouseOver);
-          element.addEventListener("mouseout", this.mouseOut);
-        });
-      }
-    },
-    mouseOver: function () {
-      const hoveredProject = [].map.call(
-        document.querySelectorAll("#project__original .project__caption"),
-        function (i) {
-          return i.textContent;
-        }
-      );
-      console.log(typeof hoveredProject);
-      console.log(hoveredProject);
-
-      //Custom Function to achieve same as => :contains() jquery
-      function contains(selector, text) {
-        var elements = document.querySelectorAll(selector);
-        return [].filter.call(elements, function (element) {
-          return new RegExp(text).test(element.textContent);
-        });
-      }
-
-      const hoveredProjectActive = contains(
-        "#cursor-outer .project__caption",
-        hoveredProject
-      );
-      //console.log(hoveredProjectActive);
-
-      hoveredProjectActive.filter(function () {
-        if (hoveredProjectActive.textContent === hoveredProject) {
-          hoveredProjectActive.forEach((element) => {
-            element.classList.remove("is-inactive");
-            element.classList.add("is-active");
-            console.log("hey you matched");
-            gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
-              y: "0",
-              yPercent: 0,
-              ease: Expo.easeOut,
-            });
-            gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
-              y: "0",
-              delay: 0.01,
-              yPercent: 120,
-              onComplete: function setBack() {},
-              ease: Expo.easeOut,
-            });
-          });
-        }
-      });
-    },
-    mouseOut: function () {
-      const hoveredProject = [].map.call(
-        document.querySelectorAll("#project__original .project__caption"),
-        function (i) {
-          return i.textContent;
-        }
-      );
-
-      //Custom Function to achieve same as => :contains() jquery
-      function contains(selector, text) {
-        var elements = document.querySelectorAll(selector);
-        return [].filter.call(elements, function (element) {
-          return new RegExp(text).test(element.textContent);
-        });
-      }
-
-      const hoveredProjectActive = contains(
-        ".project__caption",
-        hoveredProject
-      );
-      gsap.to(document.querySelector("#cursor-outer .is-active"), 0.8, {
-        y: "0",
-        yPercent: -120,
-        onComplete: function setBack() {},
-        ease: Expo.easeOut,
-      });
-      gsap.to(document.querySelector("#cursor-outer .is-inactive"), 0, {
-        y: "0",
-        delay: 0.01,
-        yPercent: 120,
-        ease: Expo.easeOut,
-      });
-      hoveredProjectActive.forEach((element) => {
-        element.classList.remove("is-active");
-        element.classList.add("is-inactive");
-      });
-    },
-    setBack: function () {
-      if (document.querySelector("#cursor-outer .is-inactive")) {
-        gsap.to(document.querySelectorAll("#cursor-outer .is-inactive"), 0, {
-          y: "0",
-          yPercent: 120,
-          ease: Expo.easeOut,
-        });
-      }
-    }, */
     ItemTransition: function () {
       gsap.utils
         .toArray("#js-home-items >div:last-of-type .js-home-item")
