@@ -698,7 +698,7 @@ video {
 @font-face {
     font-family: 'alluraregular';
     src: url('/src/assets/allura-regular-webfont.woff2') format('woff2'),
-         url('/src/assets/allura-regular-webfont.woff') format('woff');
+        url('/src/assets/allura-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -937,6 +937,40 @@ video {
     margin-top: 10vh
 }
 
+.row:nth-of-type(18) .c-home__item {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-left: 33.3333333333%;
+    margin-top: 10vh
+}
+
+.row:nth-of-type(19) .c-home__item {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-top: 10vh
+}
+
+.row:nth-of-type(20) .c-home__item {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+    margin-left: 16.6666666667%;
+    margin-top: 10vh;
+    z-index: 0
+}
+
+.row:nth-of-type(21) .c-home__item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 10vh
+}
+
+.row:nth-of-type(22) .c-home__item {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-left: 33.3333333333%;
+    margin-top: 10vh
+}
+
 
 .c-home__media-container {
     display: block;
@@ -1131,6 +1165,36 @@ html.no-touchevents .c-home__media-container:hover::before {
         max-width: 33.3333333333%;
         margin-right: 66.6666666667%;
         margin-top: 10vh
+    }
+
+    .row:nth-of-type(18) .c-home__item {
+        flex: 0 0 25%;
+        max-width: 25%;
+        margin-left: 75%
+    }
+
+    .row:nth-of-type(19) .c-home__item {
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+        margin-left: 8.3333333333%
+    }
+
+    .row:nth-of-type(20) .c-home__item {
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+        margin-left: 33.3333333333%
+    }
+
+    .row:nth-of-type(21) .c-home__item {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%
+    }
+
+    .row:nth-of-type(22) .c-home__item {
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+        margin-left: 50%;
+        margin-top: -10vh
     }
 
     .c-navbar-image__media-container {
